@@ -5,3 +5,20 @@ import restaurants from './views/restaurants';
 
 // display restaurants
 restaurants(DATA.restaurants);
+
+// fdsfs
+const navEl = document.getElementById('navbar');
+
+document.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    navEl.classList.remove('navbar__inherit');
+  } else if (window.scrollY <= 500) {
+    navEl.classList.add('navbar__inherit');
+  }
+});
+
+const findRestoBtn = document.getElementById('findresto__button');
+const title = document.getElementById('title');
+findRestoBtn.addEventListener('click', () => {
+  window.scrollTo(0, title.offsetTop - 70);
+});

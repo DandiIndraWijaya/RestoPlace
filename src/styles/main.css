@@ -26,7 +26,7 @@ html {
     background-color: inherit;
 }
 
-.navbar a {
+.navbar .links a {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -40,6 +40,64 @@ html {
 .navbar a:hover {
     background: #3ec1d3;
     color: white;
+}
+
+#humberger {
+    padding: 7px 5px;
+    cursor: pointer;
+    width: max-content;
+    transition: 0.5s;
+}
+
+.humberger__drawer__clicked {
+    margin-left: 160px;
+}
+
+#humberger .line {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    margin-left: 10px;
+}
+
+#drawer__title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+#drawer {
+    position: fixed;
+    z-index: 99999;
+    background-color:#2d4059;
+    height: 100%;
+    padding: 10px;
+    width: 150px;
+    transition: 0.5s;
+}
+
+.drawer {
+    left: -200px;
+}
+.drawer__open {
+    left: 0px;
+}
+
+#drawer .link {
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+    background-color:  #ff9a00;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 25px;
+    color: white;
+}
+
+#drawer a{
+    cursor: pointer;
+    text-decoration: unset;
 }
 
 .hero__image {
@@ -116,14 +174,14 @@ html {
     position: absolute;
     border-radius: 8px;
     left: -9px;
-    top: -5px;
+    top: -2px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .restaurant__information{
     position: relative;
     display: flex;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .restaurant__flex {
@@ -153,7 +211,7 @@ html {
     color: white;
     font-weight: bold;
     border-radius: 8px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .restaurant__desc{
@@ -180,6 +238,10 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+    .navbar .links {
+        display: none;
+    }
+
     .container{
         width: 100%;
     }
@@ -198,5 +260,15 @@ footer {
 
     .restaurant__desc {
         font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 601px){
+    #humberger {
+        display: none;
+    }
+
+    #drawer {
+        left: -200px;
     }
 }

@@ -22,3 +22,11 @@ const title = document.getElementById('title');
 findRestoBtn.addEventListener('click', () => {
   window.scrollTo(0, title.offsetTop - 70);
 });
+
+// drawer
+const humbergerEl = document.getElementById('humberger');
+const drawerEl = document.getElementById('drawer');
+humbergerEl.addEventListener('click', () => {
+  humbergerEl.classList.toggle('humberger__drawer__clicked');
+  drawerEl.classList.toggle('drawer__open');
+});

@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 const events = () => {
-  // onscroll
+  // onscroll when click find restaurant button
   const navEl = document.getElementById('navbar');
 
   document.addEventListener('scroll', () => {
@@ -18,7 +18,7 @@ const events = () => {
     window.scrollTo(0, title.offsetTop - 70);
   });
 
-  // drawer
+  // toggle drawer
   const humbergerEl = document.getElementById('humberger');
   const drawerEl = document.getElementById('drawer');
   humbergerEl.addEventListener('click', () => {

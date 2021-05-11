@@ -4,7 +4,7 @@ import DATA from '../DATA.json';
 import restaurants from './views/restaurants';
 
 const app = () => {
-  // events
+  // page events
   events();
 
   // display restaurants

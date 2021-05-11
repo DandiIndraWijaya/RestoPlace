@@ -141,14 +141,11 @@ html {
     font-size: 18px;
     font-weight: bold;
     transition: 0.5s;
+    border-radius: 28px;
 }
 
 .hero__text button:focus {
     border: 2px solid white;
-}
-
-.hero__text button:hover{
-    border-radius: 32px;
 }
 
 .title {

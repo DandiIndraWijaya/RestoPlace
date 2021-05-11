@@ -2,6 +2,12 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import DATA from '../DATA.json';
 import restaurants from './views/restaurants';
+import './components/navbar';
+import './components/drawer';
+import './components/hero';
+import './components/title';
+import './components/container';
+import './components/footer';
 
 // display restaurants
 restaurants(DATA.restaurants);

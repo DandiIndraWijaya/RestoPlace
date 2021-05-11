@@ -26,8 +26,12 @@ const restaurants = (datas = []) => {
     `;
   });
 
-  const restaurantsHTML = document.getElementById('restaurants');
-  restaurantsHTML.innerHTML = restaurantsView;
+  const containerEl = document.getElementById('container');
+  const restaurantsEL = document.createElement('DIV');
+  restaurantsEL.classList.add('restaurants');
+  containerEl.appendChild(restaurantsEL);
+
+  restaurantsEL.innerHTML = restaurantsView;
 };
 
 export default restaurants;

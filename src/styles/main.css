@@ -225,6 +225,7 @@ html {
     margin-top: 30px;
     padding: 10px;
     font-size: 14px;
+    font-weight: 500;
 }
 
 .restaurant__picture{
@@ -260,11 +261,15 @@ footer {
     }
 
     .restaurant__name {
-        font-size: 14px;
+        font-size: 16px;
+    }
+
+    .restaurant__rating {
+        font-size: 12px;
     }
 
     .restaurant__desc {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 

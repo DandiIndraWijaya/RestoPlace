@@ -19,8 +19,8 @@ const restaurants = (datas = []) => {
             </div>
           </div>
         </div>
-        <div class="restaurant__desc">
-          <p tabIndex="0">${data.description}</p>
+        <div tabIndex="0" class="restaurant__desc">
+          ${data.description}
         </div>
       </div>
     `;

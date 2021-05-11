@@ -79,6 +79,7 @@ html {
 
 .drawer {
     left: -200px;
+    
 }
 .drawer__open {
     left: 0px;
@@ -140,6 +141,10 @@ html {
     font-size: 18px;
     font-weight: bold;
     transition: 0.5s;
+}
+
+.hero__text button:focus {
+    border: 2px solid white;
 }
 
 .hero__text button:hover{

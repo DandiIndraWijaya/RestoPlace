@@ -3,24 +3,24 @@ const restaurants = (datas = []) => {
   datas.forEach((data) => {
     restaurantsView += `
       <div class="restaurant">
-        <div class="restaurant__city">
+        <div tabIndex="0" class="restaurant__city">
           Kota. ${data.city}
         </div>
         <img src="${data.pictureId}" class="restaurant__picture" />
         <div class="restaurant__information">
           <div class="restaurant__flex">
-            <div class="restaurant__name">
+            <div tabIndex="0" class="restaurant__name">
               ${data.name}
             </div>
           </div>
           <div class="restaurant__flex">
-            <div class="restaurant__rating">
+            <div tabIndex="0" class="restaurant__rating">
               Rating: ${data.rating}
             </div>
           </div>
         </div>
         <div class="restaurant__desc">
-          ${data.description}
+          <p tabIndex="0">${data.description}</p>
         </div>
       </div>
     `;

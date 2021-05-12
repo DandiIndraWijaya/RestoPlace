@@ -44,14 +44,16 @@ html {
 }
 
 #logo {
-    float: left;
     margin-left: 20px;
     margin-top: 12px;
     margin-right: 10px;
 }
 
+.navbar .links {
+    display: flex;
+}
+
 .navbar .links a {
-    float: left;
     justify-content: center;
     display: block;
     color: #f2f2f2;
@@ -252,6 +254,12 @@ html {
     padding: 10px;
     font-size: 14px;
     font-weight: 500;
+}
+
+.restaurant__desc p {
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .restaurant__picture{

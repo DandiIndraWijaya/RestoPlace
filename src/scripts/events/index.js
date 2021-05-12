@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 const events = () => {
-  // navbar background color change whene scrolltop is > 500
+  // navbar background color change when scrolltop is > 500
   const navEl = document.getElementById('navbar');
 
   document.addEventListener('scroll', () => {
@@ -19,7 +19,7 @@ const events = () => {
     window.scrollTo(0, title.offsetTop - 70);
   });
 
-  // onscroll when click skipt to content
+  // onscroll when click skip to content
   const skiptToContent = document.getElementById('skip__to__content');
   skiptToContent.addEventListener('click', () => {
     window.scrollTo(0, title.offsetTop - 90);
@@ -32,6 +32,15 @@ const events = () => {
     humbergerEl.classList.toggle('humberger__drawer__clicked');
     drawerEl.classList.toggle('drawer__open');
   });
+
+  // restaurant description detail
+  const detailBtnEl = document.getElementsByClassName('resto__detail__btn');
+  const restoDescEl = document.getElementsByClassName('restaurant__desc__close');
+  for (let i = 0; i < detailBtnEl.length; i += 1) {
+    detailBtnEl[i].addEventListener('click', () => {
+      restoDescEl[i].classList.toggle('restaurant__desc__detail');
+    });
+  }
 };
 
 export default events;

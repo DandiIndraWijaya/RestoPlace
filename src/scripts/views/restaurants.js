@@ -19,8 +19,9 @@ const restaurants = (datas = []) => {
             </div>
           </div>
         </div>
-        <article tabIndex="0" class="restaurant__desc">
-          <p>
+        <article class="restaurant__desc">
+          <button class="resto__detail__btn">Detail</button>
+          <p tabIndex="0" class="restaurant__desc__close">
             ${data.description}
           </p>
         </article>

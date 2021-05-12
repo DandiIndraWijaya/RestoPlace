@@ -199,10 +199,10 @@ html {
 }
 
 .restaurant__city {
-    background-color: #ff9a00;
+    background-color: white;
     padding: 5px;
     font-size: 12px;
-    color: white;
+    color: #2d4059;
     font-weight: bold;
     position: absolute;
     border-radius: 8px;
@@ -223,16 +223,15 @@ html {
 
 .restaurant__rating {
     float: right;
-    background-color: #3ec1d3;
     width: max-content;
     padding: 5px;
-    font-size: 14px;
-    color: white;
+    font-size: 12px;
     font-weight: bold;
+    color: #2d4059;
     border-radius: 8px;
     position: absolute;
     right: 0px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .restaurant__name {
@@ -240,7 +239,7 @@ html {
     background-color: #2d4059;
     position: absolute;
     padding: 5px;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     font-weight: bold;
     border-radius: 8px;
@@ -256,10 +255,29 @@ html {
     font-weight: 500;
 }
 
-.restaurant__desc p {
-    height: 120px;
+.resto__detail__btn{
+    border: unset;
+    cursor: pointer;
+    background-color: inherit;
+    color: #2d4059;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.restaurant__desc__close {
+    max-height: 0px;
     overflow: hidden;
     text-overflow: ellipsis;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.25s linear;
+}
+
+.restaurant__desc__detail {
+    max-height: 500px;
+    visibility: visible;
+    opacity: 1;
+    transition: max-height 0.25s linear;
 }
 
 .restaurant__picture{

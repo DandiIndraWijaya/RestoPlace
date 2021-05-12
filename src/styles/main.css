@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *{
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
 }
+
 
 html {
     scroll-behavior: smooth;
@@ -12,6 +13,22 @@ html {
 .container {
     width: 90%;
     margin: auto;
+}
+
+.skip__to__content {
+    background-color: #ff9a00;
+    color: white;
+    font-weight: bold;
+    text-decoration: unset;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: 8px;
+    z-index: 9999;
+}
+
+.skip__to__content:focus {
+    top: 0px;
 }
 
 .navbar {
@@ -26,8 +43,16 @@ html {
     background-color: inherit;
 }
 
+#logo {
+    float: left;
+    margin-left: 20px;
+    margin-top: 12px;
+    margin-right: 10px;
+}
+
 .navbar .links a {
     float: left;
+    justify-content: center;
     display: block;
     color: #f2f2f2;
     text-align: center;
@@ -47,6 +72,8 @@ html {
     cursor: pointer;
     width: max-content;
     transition: 0.5s;
+    background-color: inherit;
+    border: unset;
 }
 
 .humberger__drawer__clicked {
@@ -74,15 +101,17 @@ html {
     height: 100%;
     padding: 10px;
     width: 150px;
-    transition: 0.5s;
 }
 
 .drawer {
-    left: -200px;
-    
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
 }
+
 .drawer__open {
-    left: 0px;
+    visibility: visible;
+    opacity: 1;
 }
 
 #drawer .link {
@@ -241,6 +270,10 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+    #logo {
+        display: none;
+    }
+
     .navbar .links {
         display: none;
     }
@@ -258,15 +291,15 @@ footer {
     }
 
     .restaurant__name {
-        font-size: 16px;
-    }
-
-    .restaurant__rating {
         font-size: 12px;
     }
 
+    .restaurant__rating {
+        font-size: 10px;
+    }
+
     .restaurant__desc {
-        font-size: 16px;
+        font-size: 12px;
     }
 }
 
@@ -277,5 +310,6 @@ footer {
 
     #drawer {
         left: -200px;
+        display: none;
     }
 }

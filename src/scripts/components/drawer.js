@@ -8,11 +8,11 @@ class Drawer extends HTMLElement {
     this.innerHTML = `
         <div id="drawer" class="drawer">
             <div id="drawer__title">
-                <h3>RestoPlace</h3>
+                <img tabIndex="0" src="/images/app/logo.png" width="110" alt="Restoplace Logo" />
             </div>
-            <a tabindex="-1" href="/"><div class="link">Home</div></a>
-            <a tabindex="-1" href="#"><div class="link">Favorite</div> </a>
-            <a tabindex="-1" href="https://www.instagram.com/dandiindrawijaya"><div class="link">About Us</div></a>
+            <a href="/"><div class="link">Home</div></a>
+            <a href="#"><div class="link">Favorite</div> </a>
+            <a href="https://www.instagram.com/dandiindrawijaya"><div class="link">About Us</div></a>
         </div>
         `;
   }

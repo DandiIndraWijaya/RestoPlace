@@ -2,11 +2,11 @@ const restaurants = (datas = []) => {
   let restaurantsView = '';
   datas.forEach((data) => {
     restaurantsView += `
-      <div class="restaurant">
+      <section class="restaurant">
         <div tabIndex="0" class="restaurant__city">
           Kota. ${data.city}
         </div>
-        <img src="${data.pictureId}" class="restaurant__picture" />
+        <img tabIndex="0" src="${data.pictureId}" alt="${data.name} picture" class="restaurant__picture" />
         <div class="restaurant__information">
           <div class="restaurant__flex">
             <div tabIndex="0" class="restaurant__name">
@@ -19,10 +19,10 @@ const restaurants = (datas = []) => {
             </div>
           </div>
         </div>
-        <div tabIndex="0" class="restaurant__desc">
+        <article tabIndex="0" class="restaurant__desc">
           ${data.description}
-        </div>
-      </div>
+        </article>
+      </section>
     `;
   });
 

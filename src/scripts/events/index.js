@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 const events = () => {
-  // onscroll when click find restaurant button
+  // navbar background color change whene scrolltop is > 500
   const navEl = document.getElementById('navbar');
 
   document.addEventListener('scroll', () => {
@@ -11,11 +11,18 @@ const events = () => {
     }
   });
 
+  // onscroll when click find restaurant button
   const findRestoBtn = document.getElementById('findresto__button');
   const title = document.getElementById('title');
 
   findRestoBtn.addEventListener('click', () => {
     window.scrollTo(0, title.offsetTop - 70);
+  });
+
+  // onscroll when click skipt to content
+  const skiptToContent = document.getElementById('skip__to__content');
+  skiptToContent.addEventListener('click', () => {
+    window.scrollTo(0, title.offsetTop - 90);
   });
 
   // toggle drawer

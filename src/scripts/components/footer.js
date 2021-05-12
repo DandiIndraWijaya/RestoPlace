@@ -6,9 +6,9 @@ class Footer extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <footer tabindex="0">
+        <div tabIndex="0">
             Copyright © 2020 - RestoPlace
-        </footer>
+        </div>
         `;
   }
 }

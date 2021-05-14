@@ -7,7 +7,7 @@ class Footer extends HTMLElement {
   render() {
     this.innerHTML = `
         <div tabIndex="0">
-            Copyright © 2020 - RestoPlace
+            Copyright © 2021 - RestoPlace
         </div>
         `;
   }

@@ -1,5 +1,5 @@
-@mixin card($right-shadow: 4px, $bottom-shadow: 8px) {
+@mixin card($right-shadow: 4px, $bottom-shadow: 8px, $border-radius: 8px) {
   padding: 5px;
-  border-radius: 8px;
+  border-radius: $border-radius;
   box-shadow: 0 $right-shadow $bottom-shadow 0 rgba(0,0,0,0.2);
 }

@@ -37,18 +37,9 @@
   @include layout.flex();
 }
 
-.restaurant__rating {
-  @include card.card();
-  width: max-content;
-  font-size: 12px;
-  font-weight: bold;
-  color: var.$color-primary;
-  position: absolute;
-  right: 0px;
-}
-
 .restaurant__name {
   @include card.card();
+  top: -20px;
   width: max-content;
   background-color: var.$color-secondary;
   position: absolute;
@@ -56,11 +47,25 @@
   font-size: 16px;
   color: white;
   font-weight: bold;
+  left: -9px;
+}
+
+
+.restaurant__rating {
+  @include card.card();
+  width: max-content;
+  background-color: white;
+  font-size: 12px;
+  font-weight: bold;
+  color: var.$color-primary;
+  position: absolute;
+  top: -20px;
+  right: 0px;
 }
 
 .restaurant__desc{
   @include card.card(8px, 16px);
-  margin-top: 30px;
+  margin-top: 10px;
   padding: 10px;
   font-size: 14px;
   font-weight: 500;

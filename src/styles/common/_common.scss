@@ -30,3 +30,7 @@ html {
 .card {
     @include card.card();
 }
+
+.nav-card {
+    @include card.card(8px, 16px, 0px)
+}

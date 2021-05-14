@@ -6,8 +6,10 @@ const events = () => {
   document.addEventListener('scroll', () => {
     if (window.scrollY > 500) {
       navEl.classList.remove('navbar__inherit');
+      navEl.classList.add('nav-card');
     } else if (window.scrollY <= 500) {
       navEl.classList.add('navbar__inherit');
+      navEl.classList.remove('nav-card');
     }
   });
 

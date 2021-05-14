@@ -65,7 +65,7 @@ html {
 }
 
 .navbar a:hover {
-    background: #3ec1d3;
+    background: #ff9a00;
     color: white;
 }
 
@@ -258,10 +258,26 @@ html {
 .resto__detail__btn{
     border: unset;
     cursor: pointer;
+    font-size: 14px;
     background-color: inherit;
     color: #2d4059;
     font-weight: bold;
     margin: 10px 0px;
+    padding: 0px;
+}
+
+.desc__arrow{
+    font-size: 20px;
+    color: #2d4059;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.25s linear;
+}
+
+.desc__arrow__see__detail{
+    visibility: visible;
+    opacity: 1;
+    transition: max-height 0.25s linear;
 }
 
 .restaurant__desc__close {

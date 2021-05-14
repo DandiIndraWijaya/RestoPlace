@@ -20,7 +20,7 @@ const restaurants = (datas = []) => {
           </div>
         </div>
         <article class="restaurant__desc">
-          <button class="resto__detail__btn">Detail</button>
+          <button class="resto__detail__btn">Detail</button><span class="desc__arrow">&darr;</span>
           <p tabIndex="0" class="restaurant__desc__close">
             ${data.description}
           </p>

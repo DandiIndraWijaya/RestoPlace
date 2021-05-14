@@ -36,8 +36,11 @@ const events = () => {
   // restaurant description detail
   const detailBtnEl = document.getElementsByClassName('resto__detail__btn');
   const restoDescEl = document.getElementsByClassName('restaurant__desc__close');
+  const descArrowEl = document.getElementsByClassName('desc__arrow');
+
   for (let i = 0; i < detailBtnEl.length; i += 1) {
     detailBtnEl[i].addEventListener('click', () => {
+      descArrowEl[i].classList.toggle('desc__arrow__see__detail');
       restoDescEl[i].classList.toggle('restaurant__desc__detail');
     });
   }

@@ -41,7 +41,7 @@ const events = () => {
   for (let i = 0; i < detailBtnEl.length; i += 1) {
     detailBtnEl[i].addEventListener('click', () => {
       descArrowEl[i].classList.toggle('desc__arrow__see__detail');
-      restoDescEl[i].classList.toggle('restaurant__desc__detail');
+      restoDescEl[i].classList.toggle('restaurant__desc__display');
     });
   }
 };

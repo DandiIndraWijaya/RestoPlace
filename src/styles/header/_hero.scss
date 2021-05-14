@@ -1,0 +1,49 @@
+@use '../variables' as var;
+
+.hero__image {
+  background-image: var.$hero-image;
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero__paper {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  color: white;
+}
+
+.hero__text {
+  opacity: unset;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero__text {
+  button {
+    opacity: 1;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: white;
+    background-color: var.$color-secondary;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.5s;
+    border-radius: 28px;
+    &:focus {
+      border: 2px solid white;
+    }
+  }
+}

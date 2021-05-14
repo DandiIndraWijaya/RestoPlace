@@ -1,4 +1,6 @@
 const restaurants = (datas = []) => {
+  document.querySelector('page-title').title = 'Explore Restaurant';
+
   let restaurantsView = '';
   datas.forEach((data) => {
     restaurantsView += `
@@ -8,15 +10,11 @@ const restaurants = (datas = []) => {
         </div>
         <img tabIndex="0" src="${data.pictureId}" alt="${data.name} picture" class="restaurant__picture" />
         <div class="restaurant__information">
-          <div class="restaurant__flex">
-            <div tabIndex="0" class="restaurant__name">
-              ${data.name}
-            </div>
+          <div tabIndex="0" class="restaurant__name">
+            ${data.name}
           </div>
-          <div class="restaurant__flex">
-            <div tabIndex="0" class="restaurant__rating">
-              Rating: ${data.rating}
-            </div>
+          <div tabIndex="0" class="restaurant__rating">
+            Rating: ${data.rating}
           </div>
         </div>
         <article class="restaurant__desc">

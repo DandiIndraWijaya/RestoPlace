@@ -1,13 +1,18 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable linebreak-style */
+
 class Title extends HTMLElement {
-  connectedCallback() {
+  set title(title) {
+    this._title = title;
     this.render();
   }
 
   render() {
+    const title = this._title;
     this.innerHTML = `
         <div id="title" class="title">
-            <h2 tabindex="0">Explore Restaurant</h2>
+            <h2 tabindex="0">${title}</h2>
         </div>
         `;
   }

@@ -29,6 +29,7 @@ html {
 
 .card {
     @include card.card();
+    background-color: white;
 }
 
 .nav-card {

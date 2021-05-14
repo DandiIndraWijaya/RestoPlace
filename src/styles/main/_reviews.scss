@@ -1,0 +1,95 @@
+@use '../layout' as layout;
+@use '../variables' as var;
+
+.reviews__container {
+  background-color: var.$color-primary;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.review__title {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+.reviews {
+  @include layout.flex(row, space-around, flex-start);
+}
+
+.review {
+  width: 95%;
+  margin: 10px;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.review {
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+.review {
+  .information {
+    @include layout.flex(column, unset, unset);
+    width: 100%;
+    .user__name {
+      font-weight: bold;
+      color: var.$color-secondary;
+      margin-left: 8px;
+    }
+
+    .user__rating {
+      position: relative;
+      font-size: 10px;
+      font-weight: bold;
+      margin-top: 7px;
+      margin-left: 8px;
+    }
+  }
+
+  .user__review {
+    padding: 0 8px 8px 8px;
+  }
+}
+
+
+.review {
+  hr {
+    border: none;
+    height: 1px;
+    color: gainsboro; 
+    background-color: gainsboro; 
+    margin: 5px 0px;
+  }
+}
+
+
+@media only screen and (max-width: 600px){
+  .reviews {
+    @include layout.flex(column, space-around, center);
+    .user__review {
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .reviews {
+    @include layout.flex(column, space-around, center);
+    .user__review {
+      font-size: 12px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px){
+  .review {
+    width: 90%;
+    .user__review {
+      font-size: 12px;
+    }
+  }
+}

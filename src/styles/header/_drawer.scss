@@ -14,17 +14,7 @@
   height: 100%;
   padding: 10px;
   width: 150px;
-}
 
-.drawer {
-  @include transition.opacity-hidden();
-}
-
-.drawer__open {
-  @include transition.opacity-visible();
-}
-
-#drawer {
   .link {
     text-align: center;
     margin: 10px;
@@ -35,15 +25,20 @@
     border-radius: 25px;
     color: white;
   }
-}
 
-#drawer {
   a {
     cursor: pointer;
     text-decoration: unset;
   }
 }
 
+.drawer {
+  @include transition.opacity-hidden();
+}
+
+.drawer__open {
+  @include transition.opacity-visible();
+}
 
 @media only screen and (min-width: 601px){
   #drawer {

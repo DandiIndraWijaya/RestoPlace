@@ -29,46 +29,40 @@
 
 .restaurant__information{
   position: relative;
-  display: flex;
-  margin-top: 5px;
-}
-
-.restaurant__flex {
   @include layout.flex();
-}
-
-.restaurant__name {
-  @include card.card();
-  top: -20px;
-  width: max-content;
-  background-color: var.$color-secondary;
-  position: absolute;
-  padding: 5px;
-  font-size: 16px;
-  color: white;
-  font-weight: bold;
-  left: -9px;
-}
-
-
-.restaurant__rating {
-  @include card.card();
-  width: max-content;
-  background-color: white;
-  font-size: 12px;
-  font-weight: bold;
-  color: var.$color-primary;
-  position: absolute;
-  top: -20px;
-  right: 0px;
+  margin-top: 5px;
+  
+  .restaurant__name {
+    @include card.card();
+    top: -20px;
+    width: max-content;
+    background-color: var.$color-secondary;
+    position: absolute;
+    padding: 5px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    left: -9px;
+  }
+  
+  .restaurant__rating {
+    @include card.card();
+    width: max-content;
+    background-color: white;
+    font-size: 12px;
+    font-weight: bold;
+    color: var.$color-primary;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+  }
 }
 
 .restaurant__desc{
   @include card.card(8px, 16px);
-  margin-top: 10px;
+  margin-top: 0px;
   padding: 10px;
   font-size: 14px;
-  font-weight: 500;
 }
 
 .resto__detail__btn{
@@ -126,9 +120,5 @@
 
   .restaurant__rating {
       font-size: 10px;
-  }
-
-  .restaurant__desc {
-      font-size: 12px;
   }
 }

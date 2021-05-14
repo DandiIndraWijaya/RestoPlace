@@ -7,26 +7,15 @@
   position: fixed;
   top: 0;
   width: 100%;
-}
 
-.navbar__inherit{
-  background-color: inherit;
-}
+  #logo {
+    margin-left: 20px;
+    margin-top: 12px;
+    margin-right: 10px;
+  }
 
-#logo {
-  margin-left: 20px;
-  margin-top: 12px;
-  margin-right: 10px;
-}
-
-.navbar {
   .links {
     @include layout.flex();
-  }
-}
-
-.navbar {
-  .links {
     a {
       display: block;
       color: #f2f2f2;
@@ -35,17 +24,17 @@
       text-decoration: none;
       font-size: var.$nav-font-size;
       font-weight: bold;
+
+      &:hover {
+        background: var.$color-secondary;
+        color: white;
+      }
     }
   }
 }
 
-.navbar{
-  a {
-    &:hover {
-      background: var.$color-secondary;
-      color: white;
-    }
-  }
+.navbar__inherit{
+  background-color: inherit;
 }
 
 #humberger {
@@ -55,27 +44,26 @@
   transition: 0.5s;
   background-color: inherit;
   border: unset;
+
+  .line {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    margin-left: 10px;
+  }
 }
 
 .humberger__drawer__clicked {
   margin-left: 160px;
 }
 
-#humberger .line {
-  width: 25px;
-  height: 2px;
-  background-color: white;
-  margin: 6px 0;
-  margin-left: 10px;
-}
-
 @media only screen and (max-width: 600px) {
-  #logo {
-      display: none;
-  }
-
   .navbar .links {
       display: none;
+      #logo {
+          display: none;
+      }
   }
 }
 

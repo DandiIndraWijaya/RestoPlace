@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.skip__to__content {
+    background-color: #ff9a00;
+    color: white;
+    font-weight: bold;
+    text-decoration: unset;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: 8px;
+    z-index: 9999;
+}
+
+.skip__to__content:focus {
+    top: 0px;
+}
+
+.navbar {
+    z-index: 999;
+    background-color: #2d4059;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar__inherit{
+    background-color: inherit;
+}
+
+#logo {
+    margin-left: 20px;
+    margin-top: 12px;
+    margin-right: 10px;
+}
+
+.navbar .links {
+    display: flex;
+}
+
+.navbar .links a {
+    justify-content: center;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background: #ff9a00;
+    color: white;
+}
+
+#humberger {
+    padding: 7px 5px;
+    cursor: pointer;
+    width: max-content;
+    transition: 0.5s;
+    background-color: inherit;
+    border: unset;
+}
+
+.humberger__drawer__clicked {
+    margin-left: 160px;
+}
+
+#humberger .line {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    margin-left: 10px;
+}
+
+#drawer__title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+#drawer {
+    position: fixed;
+    z-index: 99999;
+    background-color:#2d4059;
+    height: 100%;
+    padding: 10px;
+    width: 150px;
+}
+
+.drawer {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.drawer__open {
+    visibility: visible;
+    opacity: 1;
+}
+
+#drawer .link {
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+    background-color:  #ff9a00;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 25px;
+    color: white;
+}
+
+#drawer a{
+    cursor: pointer;
+    text-decoration: unset;
+}
+
+.hero__image {
+    background-image: url("/images/heros/hero-image_2.jpg");
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero__paper {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    color: white;
+}
+
+.hero__text {
+    opacity: unset;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero__text button {
+    opacity: 1;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: white;
+    background-color: #ff9a00;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.5s;
+    border-radius: 28px;
+}
+
+.hero__text button:focus {
+    border: 2px solid white;
+}
+
+.title {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.restaurants {
+    padding: 10px;
+    display: grid;
+    background: white;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.restaurant {
+    border-radius: 8px;
+    margin: 10px;
+    position: relative;
+    background-color: white;
+}
+
+.restaurant__city {
+    background-color: white;
+    padding: 5px;
+    font-size: 12px;
+    color: #2d4059;
+    font-weight: bold;
+    position: absolute;
+    border-radius: 8px;
+    left: -9px;
+    top: -2px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.restaurant__information{
+    position: relative;
+    display: flex;
+    margin-top: 5px;
+}
+
+.restaurant__flex {
+    flex: 1;
+}
+
+.restaurant__rating {
+    float: right;
+    width: max-content;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2d4059;
+    border-radius: 8px;
+    position: absolute;
+    right: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.restaurant__name {
+    width: max-content;
+    background-color: #2d4059;
+    position: absolute;
+    padding: 5px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.restaurant__desc{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.resto__detail__btn{
+    border: unset;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: inherit;
+    color: #2d4059;
+    font-weight: bold;
+    margin: 10px 0px;
+    padding: 0px;
+}
+
+.desc__arrow{
+    font-size: 20px;
+    color: #2d4059;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.25s linear;
+}
+
+.desc__arrow__see__detail{
+    visibility: visible;
+    opacity: 1;
+    transition: max-height 0.25s linear;
+}
+
+.restaurant__desc__close {
+    max-height: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.25s linear;
+}
+
+.restaurant__desc__detail {
+    max-height: 500px;
+    visibility: visible;
+    opacity: 1;
+    transition: max-height 0.25s linear;
+}
+
+.restaurant__picture{
+    width: 100%;
+    border-radius: 8px;
+}
+
+footer {
+    margin-top: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2d4059;
+}
+
+@media only screen and (max-width: 600px) {
+    #logo {
+        display: none;
+    }
+
+    .navbar .links {
+        display: none;
+    }
+
+    .container{
+        width: 100%;
+    }
+    
+    .restaurants {
+        grid-template-columns: none
+    }
+
+    .restaurant {
+        margin: 5px;
+    }
+
+    .restaurant__name {
+        font-size: 12px;
+    }
+
+    .restaurant__rating {
+        font-size: 10px;
+    }
+
+    .restaurant__desc {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 601px){
+    #humberger {
+        display: none;
+    }
+
+    #drawer {
+        left: -200px;
+        display: none;
+    }
+}

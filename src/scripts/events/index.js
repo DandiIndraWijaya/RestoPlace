@@ -1,5 +1,13 @@
 /* eslint-disable linebreak-style */
 const events = () => {
+  // loader
+  window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    setTimeout(() => {
+      loader.className += ' hidden'; // class "loader hidden"
+    }, 2000);
+  });
+
   // navbar background color change when scrolltop is > 500
   const navEl = document.getElementById('navbar');
 

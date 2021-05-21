@@ -6,7 +6,7 @@ class NavBar extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <div id="navbar" class="navbar navbar__inherit">
+        <div id="navbar" class="navbar">
             <span class="links">
               <span id="logo">
                 <img tabIndex="0" src="/images/app/logo.png" width="110" alt="Restoplace Logo" />

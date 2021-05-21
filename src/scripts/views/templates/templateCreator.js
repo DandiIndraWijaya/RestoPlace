@@ -5,7 +5,7 @@ const createRestaurantCardTemplate = (restaurant) => `
     <div tabIndex="0" class="restaurant__city">
       Kota. ${restaurant.city}
     </div>
-    <img tabIndex="0" src="${CONFIG.BASE_IMAGE_URL.LARGE}${restaurant.pictureId}" alt="${restaurant.name} picture" class="restaurant__picture" />
+    <img tabIndex="0" src="${CONFIG.BASE_IMAGE_URL.MEDIUM}${restaurant.pictureId}" alt="${restaurant.name} picture" class="restaurant__picture" />
     <div class="restaurant__information">
       <div tabIndex="0" class="restaurant__name">
         ${restaurant.name}

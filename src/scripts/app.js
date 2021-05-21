@@ -33,6 +33,7 @@ class App {
   }
 
   async renderPage() {
+    Navbar.init(this._navbar);
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();

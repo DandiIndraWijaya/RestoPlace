@@ -1,4 +1,4 @@
-const restaurantCard = {
+const RestaurantCard = {
   init({ buttons, description, arrow }) {
     Array.prototype.forEach.call(buttons, (button, index) => {
       button.addEventListener('click', () => {
@@ -13,4 +13,4 @@ const restaurantCard = {
   },
 };
 
-export default restaurantCard;
+export default RestaurantCard;

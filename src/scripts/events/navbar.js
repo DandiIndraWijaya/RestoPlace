@@ -1,18 +1,48 @@
+import UrlParser from '../routes/url-parser';
+
 const Navbar = {
   init(navbar) {
-    document.addEventListener('scroll', () => {
+    this._onPage(navbar);
+  },
+
+  _onPage(navbar) {
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    if (url === '/') {
+      this._onScrollOnHomePage(navbar);
+    } else {
       this._onScroll(navbar);
-    });
+    }
+  },
+
+  _onScrollOnHomePage(navbar) {
+    navbar.classList.add('navbar__inherit');
+    navbar.classList.remove('nav-card');
+    document.addEventListener('scroll', () => this._offsetRule(navbar));
   },
 
   _onScroll(navbar) {
+    this._coloredNavbar(navbar);
+    document.addEventListener('scroll', () => {
+      this._coloredNavbar(navbar);
+    });
+  },
+
+  _offsetRule(navbar) {
     if (window.scrollY > 500) {
-      navbar.classList.remove('navbar__inherit');
-      navbar.classList.add('nav-card');
+      this._coloredNavbar(navbar);
     } else if (window.scrollY <= 500) {
-      navbar.classList.add('navbar__inherit');
-      navbar.classList.remove('nav-card');
+      this._inheritColorNavbar(navbar);
     }
+  },
+
+  _coloredNavbar(navbar) {
+    navbar.classList.remove('navbar__inherit');
+    navbar.classList.add('nav-card');
+  },
+
+  _inheritColorNavbar(navbar) {
+    navbar.classList.add('navbar__inherit');
+    navbar.classList.remove('nav-card');
   },
 };
 

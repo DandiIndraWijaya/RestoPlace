@@ -1,9 +1,11 @@
 import RestaurantDbSource from '../../data/restaurantDbSource';
 import { createRestaurantCardTemplate } from '../templates/templateCreator';
 import restaurantCard from '../../events/restaurantCard';
+import Hero from '../../events/Hero';
 
 const Favorite = {
   async render() {
+    Hero.remove();
     return `
     <div class="content">
       <div id="title" class="title">

@@ -2,12 +2,12 @@ import RestaurantDbSource from '../../data/restaurantDbSource';
 import { createRestaurantCardTemplate } from '../templates/templateCreator';
 import restaurantCard from '../../events/restaurantCard';
 
-const Home = {
+const Favorite = {
   async render() {
     return `
     <div class="content">
       <div id="title" class="title">
-          <h2 tabindex="0">Explore Restaurant</h2>
+          <h2 tabindex="0">Favorite</h2>
       </div>
       <div id="restaurants" class="restaurants">
 
@@ -36,4 +36,4 @@ const Home = {
   },
 };
 
-export default Home;
+export default Favorite;

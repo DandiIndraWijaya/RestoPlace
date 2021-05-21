@@ -1,4 +1,4 @@
-import API_ENDPOINT from '../config/api';
+import API_ENDPOINT from '../services/api';
 
 class RestaurantDbSource {
   static listRestaurants() {

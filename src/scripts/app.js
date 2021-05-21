@@ -23,8 +23,6 @@ class App {
 
     SkipToContent.init(this._skipToContentButton, this._content);
 
-    Navbar.init(this._navbar);
-
     Drawer.init({
       content: this._content,
       drawer: this._drawer,

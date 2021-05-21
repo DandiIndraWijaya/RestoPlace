@@ -12,8 +12,6 @@ class Hero extends HTMLElement {
             </div>
             <div class="hero__text">
                 <h1 tabindex="0" style="font-size:50px">Welcome To RestoPlace</h1>
-                <br>
-                <button id="findresto__button">Find Restaurant</button>
             </div>
         </div>
         `;

@@ -3,14 +3,14 @@
   text-align: center;
 }
 
-.container {
+.content {
   width: 90%;
   margin: auto;
 }
 
 
 @media only screen and (max-width: 600px) {
-  .container{
+  .content{
       width: 100%;
   }
 }

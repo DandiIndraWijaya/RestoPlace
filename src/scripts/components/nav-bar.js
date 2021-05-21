@@ -15,7 +15,7 @@ class NavBar extends HTMLElement {
                 <a href="#">Favorite</a>
                 <a href="https://www.instagram.com/dandi.i.wijaya">About Us</a>
             </span>
-            <button aria-label="humberger" id="humberger">
+            <button aria-label="humberger" id="humberger" class="humberger">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>

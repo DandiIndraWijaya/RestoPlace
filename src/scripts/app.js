@@ -1,19 +1,42 @@
 /* eslint-disable linebreak-style */
-import events from './events';
-import DATA from '../DATA.json';
-import REVIEWSDATA from '../REVIEWS.json';
-import restaurants from './views/restaurants';
-import reviews from './views/reviews';
+import UrlParser from './routes/url-parser';
+import routes from './routes/routes';
+import {
+  OnLoad, SkipToContent, Navbar, Drawer,
+} from './events';
 
-const app = () => {
-  // display restaurants
-  restaurants(DATA.restaurants);
+class App {
+  constructor({
+    loader, skipToContentButton, navbar, content, drawerButton, drawer,
+  }) {
+    this._loader = loader;
+    this._skipToContentButton = skipToContentButton;
+    this._navbar = navbar;
+    this._content = content;
+    this._drawer = drawer;
+    this._drawerButton = drawerButton;
+    this._initialAppShell();
+  }
 
-  // display reviews
-  reviews(REVIEWSDATA.reviews);
+  _initialAppShell() {
+    OnLoad.init(this._loader);
 
-  // page events
-  events();
-};
+    SkipToContent.init(this._skipToContentButton, this._content);
 
-export default app;
+    Navbar.init(this._navbar);
+
+    Drawer.init({
+      content: this._content,
+      drawer: this._drawer,
+      drawerButton: this._drawerButton,
+    });
+  }
+
+  async renderPage() {
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    const page = routes[url];
+    this._content.innerHTML = await page.render();
+    await page.afterRender();
+  }
+}
+export default App;

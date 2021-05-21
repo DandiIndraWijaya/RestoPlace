@@ -6,7 +6,8 @@ class Content extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <div id="container" class="container">
+      <div id="content" class="content">
+        
       </div>
         `;
   }

@@ -7,6 +7,7 @@
   padding: 10px;
   display: grid;
   background: white;
+  min-height: 470px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
@@ -34,7 +35,6 @@
   
   .restaurant__name {
     @include card.card();
-    top: -20px;
     width: max-content;
     background-color: var.$color-secondary;
     position: absolute;
@@ -43,6 +43,7 @@
     color: white;
     font-weight: bold;
     left: -9px;
+    top: -20px;
   }
   
   .restaurant__rating {

@@ -1,15 +1,13 @@
-import RestaurantDbSource from '../../data/restaurantDbSource';
-import { createRestaurantCardTemplate } from '../templates/templateCreator';
+import UrlParser from '../../routes/urlParser';
+import RestaurantDbSource from '../../services/api';
+import { createRestaurantDetailTemplate } from '../templates/templateCreator';
 import restaurantCard from '../../events/restaurantCard';
 
 const RestaurantDetail = {
   async render() {
     return `
     <div class="content">
-      <div id="title" class="title">
-          <h2 tabindex="0">Restaurant Detail</h2>
-      </div>
-      <div id="restaurants" class="restaurants">
+      <div id="restaurant__detail" class="restaurant__detail">
 
       </div>
     </div>
@@ -17,13 +15,12 @@ const RestaurantDetail = {
   },
 
   async afterRender() {
-    const restaurantsContainer = document.querySelector('#restaurants');
-    RestaurantDbSource.listRestaurants()
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurantDetailContainer = document.querySelector('#restaurant__detail');
+    RestaurantDbSource.restaurantDetail(url.id)
       .then((response) => response.json())
       .then((responseJson) => {
-        responseJson.restaurants.forEach((restaurant) => {
-          restaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
-        });
+        restaurantDetailContainer.innerHTML = createRestaurantDetailTemplate(responseJson.restaurant);
         this._events();
       });
   },

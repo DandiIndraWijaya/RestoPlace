@@ -15,10 +15,11 @@ const createRestaurantCardTemplate = (restaurant) => `
       </div>
     </div>
     <article class="restaurant__desc">
-      <button class="resto__detail__btn">Detail</button><span class="desc__arrow">&darr;</span>
       <p tabIndex="0" class="restaurant__desc__close">
         ${restaurant.description}
       </p>
+      </br>
+      <a href="#/restaurant/${restaurant.id}" class="resto__detail__link">Detail</a>
     </article>
   </section>
 `;

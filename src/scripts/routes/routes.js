@@ -4,7 +4,7 @@ import Favorite from '../views/pages/favorite';
 
 const routes = {
   '/': Home,
-  '/restaurant': RestaurantDetail,
+  '/restaurant/:id': RestaurantDetail,
   '/favorite': Favorite,
 };
 

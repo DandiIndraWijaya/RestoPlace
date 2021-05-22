@@ -6,7 +6,7 @@ class Hero extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <div id="hero">
+      <div id="hero" class="hero">
         <div class="hero__image">
             <div class="hero__paper">
                 

@@ -1,5 +1,9 @@
 @use '../variables' as var;
 
+.remove__hero {
+  display: none;
+}
+
 .hero__image {
   background-image: var.$hero-image;
   width: 100%;

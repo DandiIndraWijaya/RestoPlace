@@ -1,10 +1,9 @@
-import RestaurantDbSource from '../../data/restaurantDbSource';
+import RestaurantDbSource from '../../services/api';
 import { createRestaurantCardTemplate } from '../templates/templateCreator';
-import { Hero, RestaurantCard } from '../../events';
+import { RestaurantCard } from '../../events';
 
 const Home = {
   async render() {
-    Hero.init();
     return `
     <div class="content">
       <div id="title" class="title">

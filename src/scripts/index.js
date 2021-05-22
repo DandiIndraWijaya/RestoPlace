@@ -13,6 +13,7 @@ const app = new App({
   loader: document.querySelector('.loader'),
   skipToContentButton: document.getElementById('skip__to__content'),
   navbar: document.getElementById('navbar'),
+  hero: document.getElementById('hero'),
   content: document.querySelector('#main__content'),
   drawer: document.querySelector('#drawer'),
   drawerButton: document.querySelector('#humberger'),

@@ -1,11 +1,9 @@
-import RestaurantDbSource from '../../data/restaurantDbSource';
+import RestaurantDbSource from '../../services/api';
 import { createRestaurantCardTemplate } from '../templates/templateCreator';
-import restaurantCard from '../../events/restaurantCard';
-import Hero from '../../events/Hero';
+import { RestaurantCard } from '../../events';
 
 const Favorite = {
   async render() {
-    Hero.remove();
     return `
     <div class="content">
       <div id="title" class="title">
@@ -34,7 +32,7 @@ const Favorite = {
     const buttons = document.querySelectorAll('.resto__detail__btn');
     const description = document.getElementsByClassName('restaurant__desc__close');
     const arrow = document.getElementsByClassName('desc__arrow');
-    restaurantCard.init({ buttons, description, arrow });
+    RestaurantCard.init({ buttons, description, arrow });
   },
 };
 

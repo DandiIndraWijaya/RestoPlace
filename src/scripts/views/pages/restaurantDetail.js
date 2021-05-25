@@ -1,7 +1,7 @@
 import UrlParser from '../../routes/urlParser';
 import RestaurantDbSource from '../../services/api';
 import { createRestaurantDetailTemplate } from '../templates/templateCreator';
-import restaurantCard from '../../events/restaurantCard';
+import { LikeButton } from '../../events';
 
 const RestaurantDetail = {
   async render() {
@@ -20,16 +20,19 @@ const RestaurantDetail = {
     RestaurantDbSource.restaurantDetail(url.id)
       .then((response) => response.json())
       .then((responseJson) => {
-        restaurantDetailContainer.innerHTML = createRestaurantDetailTemplate(responseJson.restaurant);
-        this._events();
+        const restaurantData = responseJson.restaurant;
+        restaurantDetailContainer.innerHTML = createRestaurantDetailTemplate(restaurantData);
+        this._events(restaurantData);
       });
   },
 
-  async _events() {
-    const buttons = document.querySelectorAll('.resto__detail__btn');
-    const description = document.getElementsByClassName('restaurant__desc__close');
-    const arrow = document.getElementsByClassName('desc__arrow');
-    restaurantCard.init({ buttons, description, arrow });
+  async _events(restaurantData) {
+    const likeButtonContainer = document.querySelector('#like__button__container');
+
+    LikeButton.init({
+      likeButtonContainer,
+      restaurant: restaurantData,
+    });
   },
 };
 

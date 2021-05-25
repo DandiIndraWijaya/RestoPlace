@@ -5,6 +5,7 @@ import Hero from './hero';
 import Navbar from './navbar';
 import Drawer from './drawer';
 import RestaurantCard from './restaurantCard';
+import LikeButton from './likeButton';
 
 export {
   OnLoad,
@@ -13,4 +14,5 @@ export {
   Navbar,
   Drawer,
   RestaurantCard,
+  LikeButton,
 };

@@ -39,6 +39,23 @@ html {
     color: gainsboro;
 }
 
+.like__button, .liked__button {
+    @include card.card();
+    width: max-content;
+    background-color: white;
+    border: unset;
+    cursor: pointer;
+    color: gainsboro;
+}
+
+.liked__button {
+    color: var.$color-heart;
+}
+
+.like:hover {
+    color: var.$color-heart;
+}
+
 @keyframes fadeOut {
     100% {
         opacity: 0;

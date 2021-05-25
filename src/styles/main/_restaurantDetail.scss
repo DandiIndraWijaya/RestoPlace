@@ -17,7 +17,7 @@
   .restaurant__picture {
     flex-basis: 50%;
     position: relative;
-
+    height: max-content;
     .name {
       @include card.card(8px, 16px, 8px);
       position: absolute;
@@ -34,6 +34,14 @@
     img {
       border-radius: 8px;
       width: 100%;
+    }
+
+    .restaurant__like {
+      width: max-content;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      bottom: -8px;
     }
   }
 
@@ -70,10 +78,14 @@
         padding: 5px;
         border-radius: 8px;
         color: var.$color-primary;
-        border: 1px solid gainsboro;
+        border: unset;
         width: max-content;
         cursor: pointer;
         transition: 0.2s;
+      }
+
+      .rating {
+        border: unset;
       }
       
       .food, .drink {
@@ -92,9 +104,8 @@
         background-color: var.$color-forth;
       }
 
-      .food:hover, .drink:hover{
+      .food:hover, .drink:hover, .food:focus, .drink:focus{
         background-color: var.$color-primary;
-        color: white;
       }
   }
   
@@ -168,7 +179,7 @@
   }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 768px){
   #restaurant__detail {
     margin-top: 70px
   }
@@ -180,6 +191,10 @@
     .restaurant__picture {
       .city {
         font-size: 12px;
+      }
+
+      .restaurant__like {
+        bottom: -4px;
       }
     }
 

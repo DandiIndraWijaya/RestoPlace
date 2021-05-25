@@ -2,47 +2,48 @@ import UrlParser from '../routes/urlParser';
 
 const Navbar = {
   init(navbar) {
-    this._onPage(navbar);
+    this._navbar = navbar;
+    this._onPage();
   },
 
-  _onPage(navbar) {
+  _onPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     if (url === '/') {
-      this._onScrollOnHomePage(navbar);
+      this._onScrollOnHomePage(this._navbar);
     } else {
-      this._onScroll(navbar);
+      this._onScroll(this._navbar);
     }
   },
 
-  _onScrollOnHomePage(navbar) {
-    navbar.classList.add('navbar__inherit');
-    navbar.classList.remove('nav-card');
-    document.addEventListener('scroll', () => this._offsetRule(navbar));
+  _onScrollOnHomePage() {
+    this._navbar.classList.add('navbar__inherit');
+    this._navbar.classList.remove('nav-card');
+    document.addEventListener('scroll', () => this._offsetRule(this._navbar));
   },
 
-  _onScroll(navbar) {
-    this._coloredNavbar(navbar);
+  _onScroll() {
+    this._coloredNavbar(this._navbar);
     document.addEventListener('scroll', () => {
-      this._coloredNavbar(navbar);
+      this._coloredNavbar(this._navbar);
     });
   },
 
-  _offsetRule(navbar) {
+  _offsetRule() {
     if (window.scrollY > 500) {
-      this._coloredNavbar(navbar);
+      this._coloredNavbar(this._navbar);
     } else if (window.scrollY <= 500) {
-      this._inheritColorNavbar(navbar);
+      this._inheritColorNavbar(this._navbar);
     }
   },
 
-  _coloredNavbar(navbar) {
-    navbar.classList.remove('navbar__inherit');
-    navbar.classList.add('nav-card');
+  _coloredNavbar() {
+    this._navbar.classList.remove('navbar__inherit');
+    this._navbar.classList.add('nav-card');
   },
 
-  _inheritColorNavbar(navbar) {
-    navbar.classList.add('navbar__inherit');
-    navbar.classList.remove('nav-card');
+  _inheritColorNavbar() {
+    this._navbar.classList.add('navbar__inherit');
+    this._navbar.classList.remove('nav-card');
   },
 };
 

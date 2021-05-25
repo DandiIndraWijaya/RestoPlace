@@ -93,7 +93,6 @@
       }
 
       .food:hover, .drink:hover{
-        font-size: 14px;
         background-color: var.$color-primary;
         color: white;
       }
@@ -108,7 +107,8 @@
     flex-basis: 60%;
     padding: 10px 5px;
     line-height: 1.8em;
-    border-bottom: 1px solid gainsboro;
+    height: max-content;
+    margin-right: 10px;
 
     p{
       font-size: 14px;
@@ -120,10 +120,31 @@
     flex-basis: 40%;
     padding: 10px 5px;
 
+    .restaurant__reviews__container {
+      max-height: 280px;
+      overflow: scroll;
+    }
+
+    #restaurant__reviews__container::-webkit-scrollbar-thumb {
+      background-color: green;
+    }
+
+    #restaurant__reviews__container::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    #restaurant__reviews__container::-webkit-scrollbar-thumb {
+      background-color: gainsboro; 
+    }
+
+    hr{
+      border-top: 1px solid gainsboro;
+      margin-top: 10px;
+    }
+
     .restaurant__review {
       margin-top: 10px;
       border-bottom: 1px solid gainsboro;
-      border-left: 1px solid gainsboro;
       padding: 5px 9px;
 
       .user__name{
@@ -173,12 +194,14 @@
     @include layout.flex(column, unset, unset);
     margin-top: 5px;
     .description {
+      margin: 0;
       p{
         font-size: 12px;
       }
     }
 
     .restaurant__reviews {
+      margin-top: 10px;
       .restaurant__review {
         .user__name, .user__review{
           font-size: 12px;

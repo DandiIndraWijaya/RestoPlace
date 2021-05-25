@@ -28,8 +28,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <div id="title" class="title">
     <h2 tabindex="0">Restaurant Detail</h2>
   </div>
-  <section id="restaurant__detail__content" class="restaurant__detail__content card">
-  <div id="restaurant__detail__1" class="restaurant__detail__1">
+  <section id="restaurant__detail__content" class="restaurant__detail__content">
+  <div id="restaurant__detail__1" class="restaurant__detail__1 card">
     <div class="restaurant__picture">
       <div class="name">${restaurant.name}</div>
       <img tabIndex="0" src="${CONFIG.BASE_IMAGE_URL.LARGE}${restaurant.pictureId}" alt="${restaurant.name} picture" />
@@ -64,18 +64,21 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </div>
    
   <div id="restaurant__detail__2" class="restaurant__detail__2">
-    <div class="description">
+    <div class="description card">
       <h3>Description</h3>
 
       <p>${restaurant.description}</p>
     </div>
 
-    <div class="restaurant__reviews">
+    <div class="restaurant__reviews card">
       <h3>Reviews</h3>
-      ${restaurant.customerReviews.map((review) => `<div class="restaurant__review">
-      <div class="user__name">${review.name}</div>
-      <div class="user__review"><p>${review.review}</p></div>
-      <div class="review__date">${review.date}</div></div>`).join(' ')}
+      <hr class="line"/>
+      <div class="restaurant__reviews__container" id="restaurant__reviews__container">
+        ${restaurant.customerReviews.map((review) => `<div class="restaurant__review">
+        <div class="user__name">${review.name}</div>
+        <div class="user__review"><p>${review.review}</p></div>
+        <div class="review__date">${review.date}</div></div>`).join(' ')}
+      </div>
     </div>
   </div>
   </section>

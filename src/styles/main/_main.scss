@@ -1,11 +1,19 @@
-.title {
-  margin-top: 30px;
+.home__title, .title {
   text-align: center;
+}
+
+#home__title {
+  margin-top: 30px;
+}
+
+#title {
+    margin-top: 80px;
 }
 
 .content {
   width: 90%;
   margin: auto;
+  min-height: 505px;
 }
 
 @media only screen and (max-width: 600px) {

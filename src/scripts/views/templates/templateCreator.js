@@ -29,9 +29,6 @@ const createRestaurantCardTemplate = (restaurant) => `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => `
-  <div id="title" class="title">
-    <h2 tabindex="0">Restaurant Detail</h2>  
-  </div>
   <section id="restaurant__detail__content" class="restaurant__detail__content">
   <div id="restaurant__detail__1" class="restaurant__detail__1 card">
     <div class="restaurant__picture">
@@ -105,9 +102,22 @@ const createLikedButtonTemplate = () => `
   </button>
 `;
 
+const createErrorTemplate = (errorMessage) => `
+  <div class="error">
+    <div class="message">
+      <span>${errorMessage}</span>
+    </div>
+    </br>
+    <div class="reload">
+      <a href="javascript:location.reload();"" class="redo">Reload &#8634;</a>
+    </div>
+  </div>
+`;
+
 export {
   createRestaurantCardTemplate,
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
+  createErrorTemplate,
 };

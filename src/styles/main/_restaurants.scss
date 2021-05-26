@@ -7,7 +7,6 @@
   padding: 10px;
   display: grid;
   background: white;
-  min-height: 470px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
@@ -77,6 +76,7 @@
 }
 
 .resto__detail__link {
+  text-decoration: unset;
   .link{
     background-color: var.$color-primary;
     text-align: center;
@@ -85,7 +85,10 @@
     font-size: 14px;
     color: white;
     font-weight: bold;
-    text-decoration: unset;
+  }
+
+  .link:hover {
+    background-color: gray;
   }
 }
 

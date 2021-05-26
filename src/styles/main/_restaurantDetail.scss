@@ -2,17 +2,13 @@
 @use '../card' as card;
 @use '../variables' as var;
 
+
 #restaurant__detail {
-  min-height: 510px;
-  margin-top: 80px;
-  #title {
-    text-align: center;
-  }
+  margin-top: 20px;
 }
 
 #restaurant__detail__1 {
   @include layout.flex();
-  margin-top: 40px;
 
   .restaurant__picture {
     flex-basis: 50%;
@@ -69,12 +65,12 @@
         margin-top: 20px;
         tr {
           td {
-            // border-bottom: 1px solid gainsboro;
             padding: 10px 5px;
           }
         }
       }
       .rating, .category, .food, .drink {
+        box-sizing: border-box;
         padding: 5px;
         border-radius: 8px;
         color: var.$color-primary;
@@ -91,7 +87,7 @@
       
       .food, .drink {
         display: inline-block;
-        border: 1px solid var.$color-heart;
+        border: 1px solid var.$color-secondary;
         color: white;
         margin-top: 5px;
         color: var.$color-primary;
@@ -175,13 +171,9 @@
 }
 
 @media only screen and (max-width: 768px){
-  #restaurant__detail {
-    margin-top: 70px
-  }
 
   #restaurant__detail__1 {
     @include layout.flex(column, unset, unset);
-    margin-top: 10px;
 
     .restaurant__picture {
       .city {

@@ -35,6 +35,47 @@ html {
     width: 300px;
 }
 
+.loading {
+    text-align: center;
+    margin-top: 20%;
+    display: block;
+    animation: animate 0.5s infinite alternate;
+    color: var.$color-secondary;
+    font-weight: bold;
+}
+
+.error {
+    margin: auto;
+    margin-top: 20%;
+    width: max-content;
+    
+    .message {
+        font-size: 18px;
+        background-color: var.$color-heart;
+        color: white;
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .reload {
+      text-align: center;
+      a{
+        color: var.$color-secondary;
+        font-size: 18px;
+      }
+    }
+}
+
+@keyframes animate{
+    0%{
+       opacity: 1; 
+    }
+  
+    100%{
+       opacity: 0.2;
+    }
+  }
+
 .line {
     color: gainsboro;
 }
@@ -85,6 +126,20 @@ html {
 @media only screen and (max-width: 700px){
     .loader > img {
         margin-top: 50%;
+    }
+
+    .error {
+      width: 100%;
+      .message {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .reload {
+        a{
+          font-size: 14px;
+        }
+      }
     }
 }
 

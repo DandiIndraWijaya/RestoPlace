@@ -1,16 +1,16 @@
 import RestaurantDbSource from '../../services/api';
-import { createRestaurantCardTemplate } from '../templates/templateCreator';
+import { createRestaurantCardTemplate, createErrorTemplate } from '../templates/templateCreator';
 import { RestaurantCard } from '../../events';
 
 const Home = {
   async render() {
     return `
     <div class="content">
-      <div id="title" class="title">
+      <div id="home__title" class="home__title">
           <h2 tabindex="0">Explore Restaurant</h2>
       </div>
       <div id="restaurants" class="restaurants">
-
+        <h2 class="loading">Loading...</h2>
       </div>
     </div>
     `;
@@ -21,6 +21,7 @@ const Home = {
     RestaurantDbSource.listRestaurants()
       .then((response) => response.json())
       .then((responseJson) => {
+        restaurantsContainer.innerHTML = '';
         responseJson.restaurants.forEach((restaurant) => {
           restaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
         });
@@ -28,6 +29,7 @@ const Home = {
       })
       .catch((error) => {
         console.log(error);
+        restaurantsContainer.innerHTML = createErrorTemplate(error.message);
       });
   },
 

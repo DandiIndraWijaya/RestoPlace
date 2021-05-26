@@ -1,0 +1,36 @@
+@use '../variables' as var;
+@use '../card' as card;
+@use '../layout' as layout;
+@use '../transition' as transition;
+
+
+#favorite__restaurants {
+  margin-top: 80px;
+}
+
+#favorite__restaurants__content{
+  padding: 10px;
+  display: grid;
+  background: white;
+  min-height: 460px;
+  margin: auto;
+  width: 45%;
+}
+
+@media only screen and (max-width: 768px) {
+  #favorite__restaurants__content {
+      width: 95%;
+  }
+
+  .restaurant {
+      margin: 5px;
+  }
+
+  .restaurant__name {
+      font-size: 12px;
+  }
+
+  .restaurant__rating {
+      font-size: 10px;
+  }
+}

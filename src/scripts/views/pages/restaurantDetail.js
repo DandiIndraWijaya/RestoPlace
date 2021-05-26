@@ -23,6 +23,9 @@ const RestaurantDetail = {
         const restaurantData = responseJson.restaurant;
         restaurantDetailContainer.innerHTML = createRestaurantDetailTemplate(restaurantData);
         this._events(restaurantData);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   },
 

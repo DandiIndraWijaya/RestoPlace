@@ -1,4 +1,4 @@
-import RestaurantDbSource from '../../services/api';
+import FavoriteRestaurantsIdb from '../../data/favoriteRestaurantsIDB';
 import { createRestaurantCardTemplate } from '../templates/templateCreator';
 import { RestaurantCard } from '../../events';
 
@@ -6,26 +6,25 @@ const Favorite = {
   async render() {
     return `
     <div class="content">
-      <div id="title" class="title">
-          <h2 tabindex="0">Favorite</h2>
-      </div>
-      <div id="restaurants" class="restaurants">
+      <div id="favorite__restaurants" class="favorite__restaurants">
+          <div id="title" class="title">
+            <h2 tabindex="0">Favorite</h2>  
+          </div>
+          <div id="favorite__restaurants__content">
 
+          </div>
       </div>
     </div>
     `;
   },
 
   async afterRender() {
-    const restaurantsContainer = document.querySelector('#restaurants');
-    RestaurantDbSource.listRestaurants()
-      .then((response) => response.json())
-      .then((responseJson) => {
-        responseJson.restaurants.forEach((restaurant) => {
-          restaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
-        });
-        this._events();
-      });
+    const favoriteRestaurantsContainer = document.querySelector('#favorite__restaurants__content');
+    const favoriteRestaurants = await FavoriteRestaurantsIdb.getAllRestaurants();
+
+    favoriteRestaurants.forEach((restaurant) => {
+      favoriteRestaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
+    });
   },
 
   async _events() {

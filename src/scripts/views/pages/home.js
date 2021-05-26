@@ -25,6 +25,9 @@ const Home = {
           restaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
         });
         this._events();
+      })
+      .catch((error) => {
+        console.log(error);
       });
   },
 

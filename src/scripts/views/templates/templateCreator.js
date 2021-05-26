@@ -15,11 +15,15 @@ const createRestaurantCardTemplate = (restaurant) => `
       </div>
     </div>
     <article class="restaurant__desc">
-      <p tabIndex="0" class="restaurant__desc__close">
+      <p tabIndex="0">
         ${restaurant.description}
       </p>
       </br>
-      <a href="#/restaurant/${restaurant.id}" class="resto__detail__link">Detail</a>
+      <a href="#/restaurant/${restaurant.id}" class="resto__detail__link">
+        <div class="link">
+          Detail
+        </div>
+      </a>
     </article>
   </section>
 `;
@@ -91,13 +95,13 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
 const createLikeButtonTemplate = () => `
   <button aria-label="like this restaurant" id="like__button" class="like__button">
-    <i class="fas fa-heart fa-2x" aria-hidden="true"></i>
+    <i class="fas fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
   <button aria-label="like this restaurant" id="liked__button" class="liked__button">
-    <i class="fas fa-heart fa-2x" aria-hidden="true"></i>
+    <i class="fas fa-heart" aria-hidden="true"></i>
   </button>
 `;
 

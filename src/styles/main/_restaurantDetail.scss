@@ -3,7 +3,7 @@
 @use '../variables' as var;
 
 #restaurant__detail {
-  min-height: 470px;
+  min-height: 510px;
   margin-top: 80px;
   #title {
     text-align: center;
@@ -69,7 +69,7 @@
         margin-top: 20px;
         tr {
           td {
-            border-bottom: 1px solid gainsboro;
+            // border-bottom: 1px solid gainsboro;
             padding: 10px 5px;
           }
         }
@@ -80,6 +80,7 @@
         color: var.$color-primary;
         border: unset;
         width: max-content;
+        border: 1px solid var.$color-primary;
         cursor: pointer;
         transition: 0.2s;
       }
@@ -90,22 +91,16 @@
       
       .food, .drink {
         display: inline-block;
-        border: unset;
-        font-size: 12px;
+        border: 1px solid var.$color-heart;
         color: white;
-        margin-bottom: 5px;
-      }
-
-      .food {
-        background-color: var.$color-third;
-      }
-
-      .drink {
-        background-color: var.$color-forth;
+        margin-top: 5px;
+        color: var.$color-primary;
       }
 
       .food:hover, .drink:hover, .food:focus, .drink:focus{
-        background-color: var.$color-primary;
+        background-color: var.$color-secondary;
+        border: unset;
+        color: white;
       }
   }
   
@@ -116,7 +111,7 @@
   margin-top: 20px;
   .description {
     flex-basis: 60%;
-    padding: 10px 5px;
+    padding: 10px;
     line-height: 1.8em;
     height: max-content;
     margin-right: 10px;
@@ -129,7 +124,7 @@
 
   .restaurant__reviews {
     flex-basis: 40%;
-    padding: 10px 5px;
+    padding: 10px;
 
     .restaurant__reviews__container {
       max-height: 280px;

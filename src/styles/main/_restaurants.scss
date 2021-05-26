@@ -61,55 +61,32 @@
 
 .restaurant__desc{
   @include card.card(8px, 16px);
-  margin-top: 0px;
+  margin-top: 0;
   padding: 10px;
   font-size: 14px;
-}
 
-// .resto__detail__btn{
-//   border: unset;
-//   cursor: pointer;
-//   font-size: 16px;
-//   background-color: inherit;
-//   color: var.$color-primary;
-//   font-weight: bold;
-//   margin: 10px 0px 0px;
-//   padding: 0;
-//   height: 45px;
-//   min-width: 45px;
-// }
+  p{
+    margin: 14px 0 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.8em;
+  }
+}
 
 .resto__detail__link {
-  font-size: 16px;
-  background-color: inherit;
-  color: var.$color-primary;
-  font-weight: bold;
-  margin: 10px 0 0;
-  text-decoration: unset;
-}
-
-// .desc__arrow{
-//   font-size: 20px;
-//   color: var.$color-primary;
-//   @include transition.opacity-hidden();
-// }
-
-.desc__arrow__see__detail{
-  @include transition.opacity-visible();
-}
-
-.restaurant__desc__close {
-  @include transition.height-hidden();
-  overflow: hidden;
-  text-overflow: ellipsis;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.restaurant__desc__display {
-  @include transition.height-visible();
-  visibility: visible;
-  opacity: 1;
+  .link{
+    background-color: var.$color-primary;
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    text-decoration: unset;
+  }
 }
 
 .restaurant__picture{
@@ -132,5 +109,9 @@
 
   .restaurant__rating {
       font-size: 10px;
+  }
+
+  .restaurant__desc, .resto__detail__link {
+    font-size: 12px;
   }
 }

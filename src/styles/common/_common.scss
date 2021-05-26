@@ -45,15 +45,34 @@ html {
     background-color: white;
     border: unset;
     cursor: pointer;
-    color: gainsboro;
+    color: grey;
+    .fas {
+        font-size: 30px;
+        transition: 0.2s;
+    }
 }
 
 .liked__button {
     color: var.$color-heart;
 }
 
-.like:hover {
+.like__button:hover, .liked__button:hover{
+    background-color: inherit;
+    @include card.card(0, 0, 0);
+
+    .fas {
+        transition: 0.2s;
+        font-size: 40px;
+    }
+}
+
+.like__button:active, .liked__button:active {
     color: var.$color-heart;
+    background-color: inherit;
+    .fas {
+        transition: 0.2s;
+        font-size: 50px;
+    }
 }
 
 @keyframes fadeOut {

@@ -167,3 +167,9 @@ html {
 .nav-card {
     @include card.card(8px, 16px, 0px)
 }
+
+.data__not__found {
+    text-align: center;
+    color: grey;
+    margin-top: 100px;
+}

@@ -1,13 +1,14 @@
 const SkipToContent = {
   init(button, content) {
     button.addEventListener('click', (event) => {
+      this._content = content;
       event.preventDefault();
-      this._gotToContent(content);
+      this._gotToContent();
     });
   },
 
-  _gotToContent(content) {
-    window.scrollTo(0, content.offsetTop - 90);
+  _gotToContent() {
+    window.scrollTo(0, this._content.offsetTop - 90);
   },
 };
 

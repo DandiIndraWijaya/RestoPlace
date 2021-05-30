@@ -1,14 +1,15 @@
 const OnLoad = {
   init(loader) {
-    window.addEventListener('load', () => [
-      this._onLoad(loader),
-    ]);
+    window.addEventListener('load', () => {
+      this._loader = loader;
+      this._onLoad(loader);
+    });
   },
 
-  _onLoad(loader) {
+  _onLoad() {
     setTimeout(() => {
       // eslint-disable-next-line no-param-reassign
-      loader.className += ' hidden';
+      this._loader.className += ' hidden';
     }, 2000);
   },
 };

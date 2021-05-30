@@ -11,7 +11,7 @@ class Drawer extends HTMLElement {
                 <img tabIndex="0" src="/images/app/logo.png" width="110" alt="Restoplace Logo" />
             </div>
             <a href="/"><div class="link">Home</div></a>
-            <a href="#"><div class="link">Favorite</div> </a>
+            <a href="#/favorite"><div class="link">Favorite</div> </a>
             <a href="https://www.instagram.com/dandiindrawijaya"><div class="link">About Us</div></a>
         </div>
         `;

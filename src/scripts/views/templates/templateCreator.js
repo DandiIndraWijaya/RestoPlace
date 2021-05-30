@@ -42,11 +42,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
     </div>
     <div class="restaurant__detail__information">
       <div tabIndex="0" class="city">Kota. ${restaurant.city}, ${restaurant.address}</div>
+      <div id="restaurant__rating__star"></div>
       <table>
-        <tr>
-          <td tabIndex="0">Rating</td>
-          <td><span tabIndex="0" class="rating">${restaurant.rating} </span></td>
-        </tr>
         <tr>
           <td tabIndex="0">Categories </td>
           <td>
@@ -114,10 +111,25 @@ const createErrorTemplate = (errorMessage) => `
   </div>
 `;
 
+const createDataNotFoundTemplate = (message) => `
+  <div class="data__not__found">
+    <h3>${message}</h3>
+    </br>
+    <i class="far fa-frown-open fa-7x"></i>
+  </div>
+`;
+
 export {
   createRestaurantCardTemplate,
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
   createErrorTemplate,
+  createDataNotFoundTemplate,
 };
+
+// eslint-disable-next-line no-lone-blocks
+{ /* <tr>
+<td tabIndex="0">Rating</td>
+<td><span tabIndex="0" class="rating">${restaurant.rating} </span></td>
+</tr> */ }

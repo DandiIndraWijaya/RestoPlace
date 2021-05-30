@@ -8,6 +8,7 @@ const CONFIG = {
   DATABASE_NAME: 'restoplace-database',
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'restaurants',
+  CACHE_NAME: 'RestoPlace-V1',
 };
 
 export default CONFIG;

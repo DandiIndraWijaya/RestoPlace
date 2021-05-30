@@ -8,6 +8,7 @@ import './components/page-title';
 import './components/page-content';
 import './components/restoplace-footer';
 import App from './app';
+import swRegister from './services/pwa/swRegister';
 
 const app = new App({
   loader: document.querySelector('.loader'),
@@ -25,4 +26,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });

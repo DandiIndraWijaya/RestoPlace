@@ -1,8 +1,7 @@
 import UrlParser from '../../routes/urlParser';
 import RestaurantDbSource from '../../services/api';
-import { createRestaurantDetailTemplate, createErrorTemplate } from '../templates/templateCreator';
-import { LikeButton } from '../../events';
-import ratingStar from '../../utils/ratingStar';
+import { createRestaurantDetailTemplate, createErrorTemplate, createRatingStarTemplate } from '../templates/templateCreator';
+import { LikeButton, AddReview } from '../../events';
 
 const RestaurantDetail = {
   async render() {
@@ -27,9 +26,16 @@ const RestaurantDetail = {
       .then((responseJson) => {
         const restaurantData = responseJson.restaurant;
         restaurantDetailContainer.innerHTML = createRestaurantDetailTemplate(restaurantData);
+
+        const likeButtonContainer = document.querySelector('#like__button__container');
         const restaurantRatingContainer = document.querySelector('#restaurant__rating__star');
-        ratingStar(restaurantRatingContainer, restaurantData.rating);
-        this._events(restaurantData);
+        const addReviewButton = document.querySelector('#add__review__button');
+        const userNameInput = document.querySelector('#user__name__input');
+        const userReviewInput = document.querySelector('#user__review__input');
+        const restaurantReviewsContainer = document.querySelector('#restaurant__reviews__container');
+
+        createRatingStarTemplate(restaurantRatingContainer, restaurantData.rating);
+        this._events(restaurantData, likeButtonContainer, addReviewButton, userNameInput, userReviewInput, restaurantReviewsContainer);
       })
       .catch((error) => {
         console.log(error);
@@ -37,15 +43,23 @@ const RestaurantDetail = {
       });
   },
 
-  async _events(restaurantData) {
+  async _events(restaurantData, likeButtonContainer, addReviewButton, userNameInput, userReviewInput, restaurantReviewsContainer) {
     window.scrollTo(0, 0);
-    const likeButtonContainer = document.querySelector('#like__button__container');
 
     LikeButton.init({
       likeButtonContainer,
       restaurant: restaurantData,
     });
+
+    AddReview.init({
+      addReviewButton,
+      restaurantId: restaurantData.id,
+      userNameInput,
+      userReviewInput,
+      restaurantReviewsContainer,
+    });
   },
+
 };
 
 export default RestaurantDetail;

@@ -1,7 +1,10 @@
 const Drawer = {
   init({ drawerButton, drawer, content }) {
-    drawerButton.addEventListener('click', (event) => {
-      this._toggleDrawer(event, drawerButton, drawer);
+    this._drawerButton = drawerButton;
+    this._drawer = drawer;
+
+    this._drawerButton.addEventListener('click', (event) => {
+      this._toggleDrawer(event);
     });
 
     content.addEventListener('click', (event) => {
@@ -9,16 +12,16 @@ const Drawer = {
     });
   },
 
-  _toggleDrawer(event, drawerButton, drawer) {
+  _toggleDrawer(event) {
     event.stopPropagation();
-    drawerButton.classList.toggle('humberger__drawer__clicked');
-    drawer.classList.toggle('drawer__open');
+    this._drawerButton.classList.toggle('humberger__drawer__clicked');
+    this._drawer.classList.toggle('drawer__open');
   },
 
-  _closeDrawer(event, drawerButton, drawer) {
+  _closeDrawer(event) {
     event.stopPropagation();
-    drawerButton.classList.remove('humberger__drawer__clicked');
-    drawer.classList.remove('drawer__open');
+    this._drawerButton.classList.remove('humberger__drawer__clicked');
+    this._drawer.classList.remove('drawer__open');
   },
 };
 

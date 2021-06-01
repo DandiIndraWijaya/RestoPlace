@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-param-reassign */
 import CONFIG from '../../config';
 
 const createRestaurantCardTemplate = (restaurant) => `
@@ -76,8 +78,16 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <artilcle class="restaurant__reviews card">
       <h3 tabIndex="0">Reviews</h3>
       <hr class="line"/>
+      <div id="add__review">
+        <h5>Add Review</h5>
+        <input id="user__name__input" placeholder="Your Name" />
+        <textarea id="user__review__input" rows="1" cols="40" placeholder="Your Review" ></textarea>
+        </br>
+        <button id="add__review__button">Add</button>
+        </br>
+      </div>
       <div class="restaurant__reviews__container" id="restaurant__reviews__container">
-        ${restaurant.customerReviews.map((review) => `<div class="restaurant__review">
+        ${restaurant.customerReviews.reverse().map((review) => `<div class="restaurant__review">
         <div tabIndex="0" class="user__name">${review.name}</div>
         <div tabIndex="0" class="user__review"><p>${review.review}</p></div>
         <div tabIndex="0" class="review__date">${review.date}</div></div>`).join(' ')}
@@ -119,6 +129,21 @@ const createDataNotFoundTemplate = (message) => `
   </div>
 `;
 
+const createRatingStarTemplate = (element, rating) => {
+  const ratingCountFloored = Math.floor(rating);
+  const modulus = rating % 1;
+
+  Array(ratingCountFloored).fill(0).map(() => {
+    element.innerHTML += '<i class="fas fa-star fa-2x"></i>';
+  });
+
+  if (modulus > 0.4) {
+    element.innerHTML += '<i class="fas fa-star-half-alt fa-2x"></i>';
+  }
+
+  element.innerHTML += `<h4>(${rating})</h4>`;
+};
+
 export {
   createRestaurantCardTemplate,
   createRestaurantDetailTemplate,
@@ -126,10 +151,5 @@ export {
   createLikedButtonTemplate,
   createErrorTemplate,
   createDataNotFoundTemplate,
+  createRatingStarTemplate,
 };
-
-// eslint-disable-next-line no-lone-blocks
-{ /* <tr>
-<td tabIndex="0">Rating</td>
-<td><span tabIndex="0" class="rating">${restaurant.rating} </span></td>
-</tr> */ }

@@ -129,9 +129,54 @@
     flex-basis: 40%;
     padding: 10px;
 
+    
+    #add__review{
+      margin-top: 10px;
+
+      #user__name__input, #user__name__input:focus{
+        outline-color: gainsboro;
+        border-color: gainsboro;
+        border-style: solid;
+        box-shadow: unset;
+        padding: 5px;
+        margin-top: 5px;
+        border-radius: 8px;
+      }
+      
+      #user__review__input, #user__review__input:focus{
+        margin-top: 5px;
+        outline: none !important;
+        border-color: gainsboro;
+        padding: 5px;
+        border-radius: 8px;
+        line-height: 1.8rem;
+      }
+
+      #add__review__button{
+        margin-top: 5px;
+        background-color: var.$color-primary;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        border: unset;
+        padding: 5px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+
     .restaurant__reviews__container {
-      max-height: 280px;
+      max-height: 300px;
       overflow: scroll;
+      .success__add__review, .failed__add__review{
+        color: var.$color-primary;
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      .failed__add__review{
+        color: var.$color-heart;
+      }
     }
 
     #restaurant__reviews__container::-webkit-scrollbar-thumb {

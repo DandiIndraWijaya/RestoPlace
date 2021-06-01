@@ -6,6 +6,7 @@ import Navbar from './navbar';
 import Drawer from './drawer';
 import RestaurantCard from './restaurantCard';
 import LikeButton from './likeButton';
+import AddReview from './addReview';
 
 export {
   OnLoad,
@@ -15,4 +16,5 @@ export {
   Drawer,
   RestaurantCard,
   LikeButton,
+  AddReview,
 };

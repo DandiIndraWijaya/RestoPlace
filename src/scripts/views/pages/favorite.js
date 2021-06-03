@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import FavoriteRestaurantsIdb from '../../data/favoriteRestaurantsIDB';
 
 const Favorite = {
@@ -21,10 +22,7 @@ const Favorite = {
     const favoriteRestaurants = await FavoriteRestaurantsIdb.getAllRestaurants();
 
     if (favoriteRestaurants.length === 0) {
-      favoriteRestaurantsContainer.innerHTML = '';
-      const errorMessageElement = document.createElement('data-not-found-message');
-      favoriteRestaurantsContainer.appendChild(errorMessageElement);
-      document.querySelector('data-not-found-message').message = "You don't have any favorite restaurant";
+      this._renderNotFoundMessage(favoriteRestaurantsContainer);
     } else {
       favoriteRestaurants.forEach((restaurant, i) => {
         const restaurantCardElement = document.createElement('restaurant-card');
@@ -36,9 +34,17 @@ const Favorite = {
     this._events();
   },
 
+  async _renderNotFoundMessage(favoriteRestaurantsContainer) {
+    favoriteRestaurantsContainer.innerHTML = '';
+    const errorMessageElement = document.createElement('data-not-found-message');
+    favoriteRestaurantsContainer.appendChild(errorMessageElement);
+    document.querySelector('data-not-found-message').message = "You don't have any favorite restaurant";
+  },
+
   async _events() {
     window.scrollTo(0, 0);
   },
+
 };
 
 export default Favorite;

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import RestaurantDbSource from '../../services/api';
 import REVIEWS from '../../data/REVIEWS.json';
 
@@ -49,11 +50,15 @@ const Home = {
       })
       .catch((error) => {
         console.log(error);
-        restaurantsContainer.innerHTML = '';
-        const errorMessageElement = document.createElement('error-message');
-        restaurantsContainer.appendChild(errorMessageElement);
-        document.querySelector('error-message').message = error.message;
+        this._renderError(error.message, restaurantsContainer);
       });
+  },
+
+  async _renderError(message, restaurantsContainer) {
+    restaurantsContainer.innerHTML = '';
+    const errorMessageElement = document.createElement('error-message');
+    restaurantsContainer.appendChild(errorMessageElement);
+    document.querySelector('error-message').message = message;
   },
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import UrlParser from '../../routes/urlParser';
 import RestaurantDbSource from '../../services/api';
 import { LikeButton, AddReview } from '../../events';
@@ -44,10 +45,7 @@ const RestaurantDetail = {
       })
       .catch((error) => {
         console.log(error);
-        restaurantDetailContainer.innerHTML = '';
-        const errorMessageElement = document.createElement('error-message');
-        restaurantDetailContainer.appendChild(errorMessageElement);
-        document.querySelector('error-message').message = error.message;
+        this._renderError(error.message, restaurantDetailContainer);
       });
   },
 
@@ -66,6 +64,13 @@ const RestaurantDetail = {
       userReviewInput,
       restaurantReviewsContainer,
     });
+  },
+
+  async _renderError(message, restaurantDetailContainer) {
+    restaurantDetailContainer.innerHTML = '';
+    const errorMessageElement = document.createElement('error-message');
+    restaurantDetailContainer.appendChild(errorMessageElement);
+    document.querySelector('error-message').message = message;
   },
 
 };

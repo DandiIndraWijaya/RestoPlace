@@ -8,9 +8,9 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(CacheHelper.deleteOldCache());
+  event.waitUntil(CacheHelper.deletePreviousCache());
 });
 
 self.addEventListener('fetch', (event) => {
-  event.respondWith(CacheHelper.revalidateCache(event.request));
+  event.respondWith(CacheHelper.staleWhileRevalidate(event.request));
 });

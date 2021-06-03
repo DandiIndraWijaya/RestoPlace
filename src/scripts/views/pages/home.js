@@ -1,4 +1,5 @@
 import RestaurantDbSource from '../../services/api';
+import REVIEWS from '../../data/REVIEWS.json';
 
 const Home = {
   async render() {
@@ -10,13 +11,21 @@ const Home = {
       <div id="restaurants" class="restaurants">
         <h2 class="loading">Loading...</h2>
       </div>
+      <div class="reviews__container" id="reviews__container">
+        <div class="review__title">
+          <h2 tabIndex="0">RestoPlace Reviews</h2>
+        </div>
+        <div class="reviews">
+
+        <div>
+      </div>
     </div>
     `;
   },
 
   async afterRender() {
     const restaurantsContainer = document.querySelector('#restaurants');
-
+    const reviewsContainer = document.querySelector('.reviews');
     RestaurantDbSource.listRestaurants()
       .then((response) => response.json())
       .then((responseJson) => {
@@ -26,6 +35,16 @@ const Home = {
           restaurantCardElement.classList.add(`restaurant__card__${i + 1}`);
           restaurantsContainer.appendChild(restaurantCardElement);
           document.querySelector(`.restaurant__card__${i + 1}`).restaurant = restaurant;
+        });
+
+        REVIEWS.reviews.map((review, i) => {
+          const restoplaceReviewCardElement = document.createElement('restoplace-review-card');
+          restoplaceReviewCardElement.classList.add(`restoplace__review__${i + 1}`);
+          restoplaceReviewCardElement.classList.add('review');
+          restoplaceReviewCardElement.classList.add('card');
+
+          reviewsContainer.appendChild(restoplaceReviewCardElement);
+          document.querySelector(`.restoplace__review__${i + 1}`).review = review;
         });
       })
       .catch((error) => {

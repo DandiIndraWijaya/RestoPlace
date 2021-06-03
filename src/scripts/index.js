@@ -8,6 +8,7 @@ import './components/page-title';
 import './components/page-content';
 import './components/restoplace-footer';
 import './components/restaurant-card';
+import './components/retoplace-review-card';
 import './components/error-message';
 import './components/data-not-found-message';
 import './components/like-button';

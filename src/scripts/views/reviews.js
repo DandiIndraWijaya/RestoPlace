@@ -4,7 +4,7 @@ const reviews = (datas = []) => {
   let reviewsView = '';
   datas.forEach((data) => {
     reviewsView += `
-    <section class="review card">
+    <section class="restoplace-review card">
       <img tabIndex="0" src="${data.picture}" alt="${data.userName} Picture" />
         <div class="information">
           <div class="user__name">

@@ -1,5 +1,4 @@
 import FavoriteRestaurantsIdb from '../../data/favoriteRestaurantsIDB';
-import { createRestaurantCardTemplate, createDataNotFoundTemplate } from '../templates/templateCreator';
 
 const Favorite = {
   async render() {
@@ -22,10 +21,16 @@ const Favorite = {
     const favoriteRestaurants = await FavoriteRestaurantsIdb.getAllRestaurants();
 
     if (favoriteRestaurants.length === 0) {
-      favoriteRestaurantsContainer.innerHTML = createDataNotFoundTemplate("You don't have any favorite restaurant");
+      favoriteRestaurantsContainer.innerHTML = '';
+      const errorMessageElement = document.createElement('data-not-found-message');
+      favoriteRestaurantsContainer.appendChild(errorMessageElement);
+      document.querySelector('data-not-found-message').message = "You don't have any favorite restaurant";
     } else {
-      favoriteRestaurants.forEach((restaurant) => {
-        favoriteRestaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
+      favoriteRestaurants.forEach((restaurant, i) => {
+        const restaurantCardElement = document.createElement('restaurant-card');
+        restaurantCardElement.classList.add(`restaurant__card__${i + 1}`);
+        favoriteRestaurantsContainer.appendChild(restaurantCardElement);
+        document.querySelector(`.restaurant__card__${i + 1}`).restaurant = restaurant;
       });
     }
     this._events();

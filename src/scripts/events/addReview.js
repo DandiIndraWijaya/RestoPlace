@@ -1,5 +1,3 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable no-unused-expressions */
 import RestaurantDbSource from '../services/api';
 
 const AddReview = {
@@ -43,7 +41,7 @@ const AddReview = {
       this._restaurantReviewsContainer.innerHTML
       += `<div class="restaurant__review">
         <div tabIndex="0" class="user__name">${review.name}</div>
-        <div tabIndex="0" class="user__review"><p>${review.review}</p></div>
+        <div tabIndex="0" class="user__review"><p>${review.review.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p></div>
         <div tabIndex="0" class="review__date">${review.date}</div></div>`;
     }).join(' ');
   },

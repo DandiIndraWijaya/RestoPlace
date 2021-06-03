@@ -1,6 +1,5 @@
 import UrlParser from '../../routes/urlParser';
 import RestaurantDbSource from '../../services/api';
-import { createRestaurantDetailTemplate, createErrorTemplate, createRatingStarTemplate } from '../templates/templateCreator';
 import { LikeButton, AddReview } from '../../events';
 
 const RestaurantDetail = {
@@ -25,7 +24,10 @@ const RestaurantDetail = {
       .then((response) => response.json())
       .then((responseJson) => {
         const restaurantData = responseJson.restaurant;
-        restaurantDetailContainer.innerHTML = createRestaurantDetailTemplate(restaurantData);
+        restaurantDetailContainer.innerHTML = '';
+        const restaurantDetailElement = document.createElement('restaurant-detail');
+        restaurantDetailContainer.appendChild(restaurantDetailElement);
+        document.querySelector('restaurant-detail').restaurant = restaurantData;
 
         const likeButtonContainer = document.querySelector('#like__button__container');
         const restaurantRatingContainer = document.querySelector('#restaurant__rating__star');
@@ -34,12 +36,18 @@ const RestaurantDetail = {
         const userReviewInput = document.querySelector('#user__review__input');
         const restaurantReviewsContainer = document.querySelector('#restaurant__reviews__container');
 
-        createRatingStarTemplate(restaurantRatingContainer, restaurantData.rating);
+        restaurantRatingContainer.innerHTML = '';
+        const ratingStarElement = document.createElement('rating-star');
+        restaurantRatingContainer.appendChild(ratingStarElement);
+        document.querySelector('rating-star').rating = restaurantData.rating;
         this._events(restaurantData, likeButtonContainer, addReviewButton, userNameInput, userReviewInput, restaurantReviewsContainer);
       })
       .catch((error) => {
         console.log(error);
-        restaurantDetailContainer.innerHTML = createErrorTemplate(error.message);
+        restaurantDetailContainer.innerHTML = '';
+        const errorMessageElement = document.createElement('error-message');
+        restaurantDetailContainer.appendChild(errorMessageElement);
+        document.querySelector('error-message').message = error.message;
       });
   },
 

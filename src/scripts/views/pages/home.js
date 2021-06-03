@@ -1,6 +1,4 @@
 import RestaurantDbSource from '../../services/api';
-import { createRestaurantCardTemplate, createErrorTemplate } from '../templates/templateCreator';
-import { RestaurantCard } from '../../events';
 
 const Home = {
   async render() {
@@ -18,26 +16,25 @@ const Home = {
 
   async afterRender() {
     const restaurantsContainer = document.querySelector('#restaurants');
+
     RestaurantDbSource.listRestaurants()
       .then((response) => response.json())
       .then((responseJson) => {
         restaurantsContainer.innerHTML = '';
-        responseJson.restaurants.forEach((restaurant) => {
-          restaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
+        responseJson.restaurants.forEach((restaurant, i) => {
+          const restaurantCardElement = document.createElement('restaurant-card');
+          restaurantCardElement.classList.add(`restaurant__card__${i + 1}`);
+          restaurantsContainer.appendChild(restaurantCardElement);
+          document.querySelector(`.restaurant__card__${i + 1}`).restaurant = restaurant;
         });
-        this._events();
       })
       .catch((error) => {
         console.log(error);
-        restaurantsContainer.innerHTML = createErrorTemplate(error.message);
+        restaurantsContainer.innerHTML = '';
+        const errorMessageElement = document.createElement('error-message');
+        restaurantsContainer.appendChild(errorMessageElement);
+        document.querySelector('error-message').message = error.message;
       });
-  },
-
-  async _events() {
-    const buttons = document.querySelectorAll('.resto__detail__btn');
-    const description = document.getElementsByClassName('restaurant__desc__close');
-    const arrow = document.getElementsByClassName('desc__arrow');
-    RestaurantCard.init({ buttons, description, arrow });
   },
 };
 

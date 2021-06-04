@@ -19,16 +19,23 @@ const AddReview = {
   },
 
   _postReview() {
+    if (this._userNameInput.value.length === 0 || this._userReviewInput.value.length === 0) {
+      this._resetInformation();
+      this._restaurantReviewsContainer.innerHTML = `<div class="failed__add__review">Please Fill Name and Review Column</div>${this._restaurantReviewsContainer.innerHTML}`;
+      return;
+    }
     RestaurantDbSource.postReviewOnRestaurant({
       id: this._restaurantId,
       name: this._userNameInput.value,
       review: this._userReviewInput.value,
     })
       .then((response) => {
+        this._resetInformation();
         this._updateRestaurantReviewsContainer(response.customerReviews);
       })
       .catch((error) => {
         console.log(error);
+        this._resetInformation();
         this._restaurantReviewsContainer.innerHTML = `<div class="failed__add__review">Failed to add review</div>${this._restaurantReviewsContainer.innerHTML}`;
       });
   },
@@ -44,6 +51,18 @@ const AddReview = {
         <div tabIndex="0" class="user__review"><p>${review.review.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p></div>
         <div tabIndex="0" class="review__date">${review.date}</div></div>`;
     }).join(' ');
+  },
+
+  _resetInformation() {
+    const failedAddReviewElement = document.querySelector('.failed__add__review');
+    if (failedAddReviewElement !== null) {
+      this._restaurantReviewsContainer.removeChild(failedAddReviewElement);
+    }
+
+    const successAddReviewElement = document.querySelector('.success__add__review');
+    if (successAddReviewElement !== null) {
+      this._restaurantReviewsContainer.removeChild(successAddReviewElement);
+    }
   },
 };
 

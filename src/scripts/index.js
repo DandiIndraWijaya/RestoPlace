@@ -13,7 +13,7 @@ import './components/error-message';
 import './components/data-not-found-message';
 import './components/like-button';
 import './components/liked-button';
-import './components/ratting-star';
+import './components/rating-star';
 import './components/restaurant-detail';
 import App from './app';
 import swRegister from './services/pwa/swRegister';

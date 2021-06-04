@@ -152,7 +152,7 @@
         line-height: 1.8rem;
       }
 
-      #add__review__button{
+      .add__review__button{
         margin-top: 5px;
         background-color: var.$color-primary;
         color: white;
@@ -162,6 +162,12 @@
         padding: 5px;
         font-size: 14px;
         cursor: pointer;
+      }
+
+        .disable__button {
+          background-color: gainsboro;
+          color: white;
+          cursor: unset;
       }
     }
 

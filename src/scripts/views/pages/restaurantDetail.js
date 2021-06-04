@@ -32,7 +32,7 @@ const RestaurantDetail = {
 
         const likeButtonContainer = document.querySelector('#like__button__container');
         const restaurantRatingContainer = document.querySelector('#restaurant__rating__star');
-        const addReviewButton = document.querySelector('#add__review__button');
+        const addReviewButton = document.querySelector('.add__review__button');
         const userNameInput = document.querySelector('#user__name__input');
         const userReviewInput = document.querySelector('#user__review__input');
         const restaurantReviewsContainer = document.querySelector('#restaurant__reviews__container');

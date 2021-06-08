@@ -12,7 +12,7 @@ class Drawer extends HTMLElement {
             </div>
             <a href="/"><div class="link">Home</div></a>
             <a href="#/favorite"><div class="link">Favorite</div> </a>
-            <a href="https://www.instagram.com/dandiindrawijaya"><div class="link">About Us</div></a>
+            <a href="https://www.instagram.com/dandi.i.wijaya"><div class="link">About Us</div></a>
         </div>
         `;
   }

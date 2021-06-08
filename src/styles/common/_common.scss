@@ -88,7 +88,7 @@ html {
     cursor: pointer;
     color: grey;
     .fas {
-        font-size: 30px;
+        font-size: 50px;
         transition: 0.2s;
     }
 }
@@ -103,7 +103,7 @@ html {
 
     .fas {
         transition: 0.2s;
-        font-size: 40px;
+        font-size: 60px;
     }
 }
 
@@ -112,7 +112,7 @@ html {
     background-color: inherit;
     .fas {
         transition: 0.2s;
-        font-size: 50px;
+        font-size: 70px;
     }
 }
 
@@ -149,9 +149,11 @@ html {
     font-weight: bold;
     text-decoration: unset;
     position: absolute;
-    top: -40px;
+    align-items: center;
+    top: -65px;
     left: 0;
     padding: 8px;
+    height: 33px;
     z-index: 9999;
 }
 

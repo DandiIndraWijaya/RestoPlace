@@ -45,6 +45,7 @@ const RestaurantDetail = {
       })
       .catch((error) => {
         console.log(error);
+        window.scrollTo(0, 0);
         this._renderError(error.message, restaurantDetailContainer);
       });
   },

@@ -66,7 +66,7 @@ class RestaurantDetail extends HTMLElement {
         <div class="restaurant__reviews__container" id="restaurant__reviews__container">
           ${this._restaurant.customerReviews.reverse().map((review) => `<div class="restaurant__review">
           <div tabIndex="0" class="user__name">${review.name}</div>
-          <div tabIndex="0" class="user__review"><p>${review.review.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p></div>
+          <div tabIndex="0" class="user__review"><p>${review.review}</p></div>
           <div tabIndex="0" class="review__date">${review.date}</div></div>`).join(' ')}
         </div>
       </article>

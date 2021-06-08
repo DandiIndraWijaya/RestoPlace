@@ -39,6 +39,7 @@ const Favorite = {
     const errorMessageElement = document.createElement('data-not-found-message');
     favoriteRestaurantsContainer.appendChild(errorMessageElement);
     document.querySelector('data-not-found-message').message = "You don't have any favorite restaurant";
+    this._events();
   },
 
   async _events() {

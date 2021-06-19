@@ -49,7 +49,6 @@ const Home = {
         });
       })
       .catch((error) => {
-        console.log(error);
         this._renderError(error.message, restaurantsContainer);
       });
   },

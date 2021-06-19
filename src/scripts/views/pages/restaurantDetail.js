@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import UrlParser from '../../routes/urlParser';
 import RestaurantDbSource from '../../services/api';
+import FavoriteRestaurantsIdb from '../../data/favoriteRestaurantsIDB';
 import { LikeButton, AddReview } from '../../events';
 
 const RestaurantDetail = {
@@ -44,7 +45,6 @@ const RestaurantDetail = {
         this._events(restaurantData, likeButtonContainer, addReviewButton, userNameInput, userReviewInput, restaurantReviewsContainer);
       })
       .catch((error) => {
-        console.log(error);
         window.scrollTo(0, 0);
         this._renderError(error.message, restaurantDetailContainer);
       });
@@ -55,6 +55,7 @@ const RestaurantDetail = {
 
     LikeButton.init({
       likeButtonContainer,
+      favoriteRestaurants: FavoriteRestaurantsIdb,
       restaurant: restaurantData,
     });
 

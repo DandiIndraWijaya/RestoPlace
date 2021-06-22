@@ -7,7 +7,9 @@ class RestoplaceReviewCard extends HTMLElement {
   render() {
     this.innerHTML = `
     <section>
-    <img tabIndex="0" src="${this._review.picture}" alt="${this._review.userName} Picture" />
+    <div class="review__picture__container">
+      <img tabIndex="0" class="lazyload" data-src="${this._review.picture}" alt="${this._review.userName} Picture" />
+    </div>
       <div class="information">
         <div class="user__name">
           <span tabIndex="0">${this._review.userName}</span>

@@ -1,7 +1,7 @@
 @mixin opacity-hidden {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.25s linear;
+  transition: visibility 0s, opacity 0.1s linear;
 }
 
 @mixin opacity-visible {
@@ -11,10 +11,10 @@
 
 @mixin height-hidden($max-height: 0px) {
   max-height: $max-height;
-  transition: max-height 0.25s linear;
+  transition: max-height 0.1s linear;
 }
 
 @mixin height-visible($max-height: 500px) {
   max-height: $max-height;
-  transition: max-height 0.25s linear;
+  transition: max-height 0.1s linear;
 }

@@ -8,11 +8,13 @@ class RestaurantCard extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <section id="restaurant" class="restaurant">
+    <section id="restaurant" class="restaurant container__skeleton">
       <div tabIndex="0" class="restaurant__city">
         Kota. ${this._restaurant.city}
       </div>
-      <img tabIndex="0" src="${CONFIG.BASE_IMAGE_URL.MEDIUM}${this._restaurant.pictureId}" alt="${this._restaurant.name} picture" class="restaurant__picture" />
+      <div class="restaurant__picture__container">
+        <img tabIndex="0" data-src="${CONFIG.BASE_IMAGE_URL.MEDIUM}${this._restaurant.pictureId}" alt="${this._restaurant.name} picture" class="lazyload restaurant__picture" />
+      </div>
       <div class="restaurant__information">
         <div tabIndex="0" class="restaurant__name">
           ${this._restaurant.name}

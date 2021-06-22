@@ -4,6 +4,15 @@
   display: none;
 }
 
+#hero {
+  position: relative;
+  height: 650px;
+  img{
+    width: 100%;
+    height: 650px;
+  }
+}
+
 .hero__image {
   background-image: var.$hero-image;
   width: 100%;
@@ -11,7 +20,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
 }
 
 .hero__paper {
@@ -23,13 +31,14 @@
 }
 
 .hero__text {
+  background-color: var.$color-secondary;
   opacity: unset;
   text-align: center;
-  position: absolute;
   width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  top: 45%;
+  font-size: 55px;
+  position: absolute;
   color: white;
   button {
     opacity: 1;
@@ -49,5 +58,17 @@
     &:focus {
       border: 2px solid white;
     }
+  }
+}
+
+@media only screen and (max-width: 600px){
+  #hero{
+    height: unset;
+    img{
+      height: unset;
+    }
+  }
+  .hero__text{
+    font-size: 25px;
   }
 }

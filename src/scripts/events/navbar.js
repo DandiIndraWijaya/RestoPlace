@@ -29,9 +29,9 @@ const Navbar = {
   },
 
   _offsetRule() {
-    if (window.scrollY > 500) {
+    if (window.scrollY > 1) {
       this._coloredNavbar(this._navbar);
-    } else if (window.scrollY <= 500) {
+    } else if (window.scrollY < 1) {
       this._inheritColorNavbar(this._navbar);
     }
   },

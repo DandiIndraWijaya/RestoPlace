@@ -36,12 +36,12 @@ const AddReview = {
       .catch((error) => {
         console.log(error);
         this._resetInformation();
-        this._restaurantReviewsContainer.innerHTML = `<div class="failed__add__review">Failed to add review</div>${this._restaurantReviewsContainer.innerHTML}`;
+        this._restaurantReviewsContainer.innerHTML = `<div class="failed__add__review"><span class="text__status__add__review">Failed to add review</span></div>${this._restaurantReviewsContainer.innerHTML}`;
       });
   },
 
   _updateRestaurantReviewsContainer(reviews) {
-    this._restaurantReviewsContainer.innerHTML = '<div class="success__add__review">Successfully add review</div>';
+    this._restaurantReviewsContainer.innerHTML = '<div class="success__add__review"><span class="text__status__add__review">Successfully add review</span></div>';
     this._userNameInput.value = '';
     this._userReviewInput.value = '';
     reviews.reverse().map((review) => {

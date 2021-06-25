@@ -12,7 +12,7 @@ class RestaurantDetail extends HTMLElement {
     <div id="restaurant__detail__1" class="restaurant__detail__1 card">
       <div class="restaurant__picture">
         <div tabindex="0" class="name">${this._restaurant.name}</div>
-        <img tabIndex="0" src="${CONFIG.BASE_IMAGE_URL.LARGE}${this._restaurant.pictureId}" alt="${this._restaurant.name} picture" />
+        <img tabIndex="0" class="lazyload" src="${CONFIG.BASE_IMAGE_URL.LARGE}${this._restaurant.pictureId}" alt="${this._restaurant.name} picture" />
         <div class="restaurant__like">
           <div id="like__button__container">
   

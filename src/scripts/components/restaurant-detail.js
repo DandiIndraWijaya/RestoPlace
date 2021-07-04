@@ -58,7 +58,7 @@ class RestaurantDetail extends HTMLElement {
         <div id="add__review">
           <h5>Add Review</h5>
           <input id="user__name__input" placeholder="Your Name" />
-          <textarea id="user__review__input" rows="1" cols="40" placeholder="Your Review" ></textarea>
+          <textarea id="user__review__input" rows="1" placeholder="Your Review" ></textarea>
           </br>
           <button class="add__review__button">Add</button>
           </br>

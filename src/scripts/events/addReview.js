@@ -33,8 +33,7 @@ const AddReview = {
         this._resetInformation();
         this._updateRestaurantReviewsContainer(response.customerReviews);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         this._resetInformation();
         this._restaurantReviewsContainer.innerHTML = `<div class="failed__add__review"><span class="text__status__add__review">Failed to add review</span></div>${this._restaurantReviewsContainer.innerHTML}`;
       });

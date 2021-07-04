@@ -132,8 +132,9 @@
     
     #add__review{
       margin-top: 10px;
+      width: 90%;
 
-      #user__name__input, #user__name__input{
+      #user__name__input, #user__review__input{
         outline-color: gainsboro;
         border-color: gainsboro;
         border-style: solid;
@@ -141,6 +142,7 @@
         padding: 15px;
         margin-top: 5px;
         border-radius: 8px;
+        width: 90%;
       }
       
       #user__review__input, #user__review__input:focus{
